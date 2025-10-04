@@ -3,3 +3,25 @@
   margin: 0;
   padding: 0;
 }
+
+body,
+html,#root {
+  background-color: #d4dff0 !important;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.layout-content {
+  flex: 1; /* Take all available space between navbar and footer */
+}
+
+.navLink {
+  color: #8FA0AD;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 200;
+}
+.navLink.active{
+  color: #4E5156;
+  font-weight: 600;
+}
