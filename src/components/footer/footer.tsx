@@ -5,7 +5,7 @@ import { Icon } from "@iconify/react";
 
 const Footer = () => {
   return (
-    <Box sx={{ display: "flex",justifyContent: "space-around", alignItems: "center", py:2   , bgcolor: "rgba(234, 236, 240, 1)" }}>
+    <Box sx={{ display: "flex",justifyContent: "space-around", alignItems: "center", py:2 }}>
         <Box>
             <Typography variant="h4" sx={{ fontFamily: "Archivo, sans-serif", fontWeight: 500, color: "#0F1011", }}>
                 “You focus on success, we<br/> handle your digital <Typography component="span" sx={{ fontFamily: "Archivo, sans-serif", fontWeight: 500, fontSize:"35.96px", color: "#8E8E8E" }}>growth</Typography><Typography component="span" sx={{ fontFamily: "Archivo, sans-serif", fontWeight: 500,fontSize: "35.96px", color: "#0F1011" }}>.”</Typography>
