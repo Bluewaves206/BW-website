@@ -6,7 +6,7 @@ import { Icon } from '@iconify/react';
 
 export default function Navbar() {
     return (<>
-        <AppBar position="sticky" sx={{ backgroundColor: 'transparent', boxShadow: 'none' }}>
+        <AppBar position="fixed" sx={{ backgroundColor: 'transparent', boxShadow: 'none' }}>
             <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', py: 3 }}>
                 <Box component={'img'} src={logo} alt="logo" width={100} ></Box>
                 <Box
@@ -20,8 +20,8 @@ export default function Navbar() {
                         px:3,
                         borderRadius: 4,
                         border: '1px solid #EBF8FF',
-                        backgroundColor: 'rgba(255, 255, 255, 0.09)',    // very transparent
-                        backdropFilter: "blur(10px)",                   // blur the background behind it
+                        backgroundColor: 'rgba(255, 255, 255, 0.4)',    // very transparent
+                        backdropFilter: "blur(15px)",                   // blur the background behind it
                         boxShadow: "16.44px 17.09px 65.75px 0px rgba(41, 95, 131, 0.08)",
                         fontFamily: 'Outfit, sans-serif',
                     }}
