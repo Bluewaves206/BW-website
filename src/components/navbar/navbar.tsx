@@ -1,13 +1,36 @@
 import { AppBar, Box, Button, Toolbar } from "@mui/material";
 import logo from '../../assets/logo.png'
-import { NavLink  } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Icon } from '@iconify/react';
+import { useEffect, useState } from "react";
 
 
 export default function Navbar() {
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            // Show blurred background if user scrolls more than 20px
+            setScrolled(window.scrollY > 20);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
     return (<>
         <AppBar position="fixed" sx={{ backgroundColor: 'transparent', boxShadow: 'none' }}>
-            <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', py: 3 }}>
+            <Toolbar sx={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                py: 1,
+                m: 3,
+                borderRadius: 10,
+                transition: "all 0.3s ease-in-out",
+                backgroundColor: scrolled ? "rgba(255, 255, 255, 0.4)" : "transparent",
+                backdropFilter: scrolled ? "blur(8px)" : "none",
+                boxShadow: scrolled ? "0 4px 20px rgba(0,0,0,0.1)" : "none",
+            }}>
                 <Box component={'img'} src={logo} alt="logo" width={100} ></Box>
                 <Box
                     sx={{
@@ -17,7 +40,7 @@ export default function Navbar() {
                         gap: 5,
                         width: "auto",
                         py: 2,
-                        px:3,
+                        px: 3,
                         borderRadius: 4,
                         border: '1px solid #EBF8FF',
                         backgroundColor: 'rgba(255, 255, 255, 0.4)',    // very transparent
@@ -26,17 +49,16 @@ export default function Navbar() {
                         fontFamily: 'Outfit, sans-serif',
                     }}
                 >
-                    <NavLink  to={'/'} className={({ isActive }) => isActive ? 'navLink active' : 'navLink'}>Home</NavLink >
-                    <NavLink  to={'/about'} className={({ isActive }) => isActive ? 'navLink active' : 'navLink'}>About Us</NavLink >
-                    <NavLink  to={'/services'} className={({ isActive }) => isActive ? 'navLink active' : 'navLink'}>Services</NavLink >
-                    <NavLink  to={'/blog'} className={({ isActive }) => isActive ? 'navLink active' : 'navLink'}>Blogs</NavLink >
-                    <NavLink  to={'/pricing'} className={({ isActive }) => isActive ? 'navLink active' : 'navLink'}>Pricing</NavLink >
+                    <NavLink to={'/'} className={({ isActive }) => isActive ? 'navLink active' : 'navLink'}>Home</NavLink >
+                    <NavLink to={'/about'} className={({ isActive }) => isActive ? 'navLink active' : 'navLink'}>About Us</NavLink >
+                    <NavLink to={'/services'} className={({ isActive }) => isActive ? 'navLink active' : 'navLink'}>Services</NavLink >
+                    <NavLink to={'/blog'} className={({ isActive }) => isActive ? 'navLink active' : 'navLink'}>Blogs</NavLink >
                 </Box>
                 <Button
                     variant="contained"
                     size="large"
                     sx={{
-                        backgroundColor:"#3F8CFF",
+                        backgroundColor: "#3F8CFF",
                         color: "white",
                         borderRadius: 6,
                         fontFamily: 'Outfit, sans-serif',
