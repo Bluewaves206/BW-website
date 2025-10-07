@@ -26,70 +26,128 @@ export default function About() {
     return (
         <>
 
-            <Box sx={{ px: 10, width: "100%" }}>
-                <div className="parent">
-                    <div className="div1">
-                        <Box component={"img"} src={heroImg1} alt="heroImg1" sx={{ width: "100%" }} />
-                    </div>
-                    <div className="div2">
-                        <Box component={"img"} src={heroImg2} alt="heroImg1" sx={{ width: "100%" }} />
-                    </div>
-                    <div className="div3">
-                        <Box sx={{ width: "100%", backgroundColor: "black", color: "white", borderRadius: "35px", textAlign: "center", py: 4 }}>
-                            <Typography variant="h2" sx={{ fontFamily: "Sarpanch" }}>+10 YEARS</Typography>
-                            <Typography variant="h6" fontFamily={"Lato"}>Experience</Typography>
-                        </Box></div>
-                    <div className="div4">
-                        <Box sx={{ p: 2 }}>
-                            <Typography variant="h5" sx={{ color: "#3F8CFF", marginBottom: "1rem" }} fontFamily={"Evanston Tavern 1846"}>ABOUT US</Typography>
-                            <Typography variant="h2" sx={{ fontWeight: 600, fontFamily: "Outfit" }} gutterBottom>What is<br />Bluewaveasmedia for ?</Typography>
-                            <Typography variant="h6" sx={{ color: "#555555", fontFamily: "Lato" }}>“Bluewaves Media is a dynamic digital solutions company that thrives on creativity and innovation. We specialize in crafting engaging websites, intuitive user experiences, and result-driven digital campaigns that help businesses stand out in the competitive online landscape. Our team is passionate about turning ideas into reality, combining cutting-edge technology with strategic design to create meaningful connections between brands and their audiences. At Bluewaves Media, we don’t just deliver services—we create experiences that inspire, engage, and drive growth for our clients.”</Typography>
-                            <Button
-                                variant="contained"
-                                size="large"
-                                disableElevation
-                                sx={{
-                                    bgcolor: "#3F8CFF",
-                                    marginTop: "7rem",
-                                    color: "#fff",
-                                    borderRadius: "30px", // pill
-                                    fontFamily: "Outfit, sans-serif",
-                                    textTransform: "none",
-                                    fontSize: "1.2rem",
-                                    fontWeight: 600,
-                                    px: 2.5,
-                                    boxShadow: "none",
-                                    overflow: "visible", // allow the circle to hang outside
-                                    "&:hover": { bgcolor: "#3575D9", boxShadow: "none" },
-                                    ".MuiButton-endIcon": { marginLeft: 1 }, // smaller gap between text and circle
-                                }}
-                                endIcon={
-                                    <Box
-                                        sx={{
-                                            border: "2px solid #fff",
-                                            borderRadius: "50%",
-                                            width: 42,
-                                            height: 42,
-                                            display: "flex",
-                                            alignItems: "center",
-                                            justifyContent: "center",
-                                            mr: "-10px", // pull the circle slightly outside the button edge
-                                            bgcolor: "transparent",
-                                        }}
-                                    >
-                                        <Icon
-                                            icon="formkit:arrowright"
-                                            style={{ fontSize: 18, color: "white" }}
-                                        />
-                                    </Box>
-                                }
+            <Box sx={{ px: 10, width: "100%", display: "flex", alignItems: "center", justifyContent: "center", height: "70vh", overflow: "hidden", gap: 3 }}>
+                <Box
+                    sx={{
+                        display: "flex",
+                        flexDirection: { xs: "column", md: "row" }, // column on mobile, row on desktop
+                        justifyContent: "center",
+                        alignItems: "center",
+                        gap: 3,
+                        borderRadius: 3,
+                        height: "100%",
+                        width: "50%",
+                    }}
+                >
+                    {/* Left Image */}
+                    <Box
+                        component="img"
+                        src={heroImg1}
+                        alt="Office"
+                        sx={{
+                            width: "50%",
+                            height: "100%",
+                            objectFit: "cover",
+                            borderRadius: 3,
+                        }}
+                    />
 
-                            >
-                                Read More
-                            </Button>
+                    {/* Right Column */}
+                    <Box
+                        sx={{
+                            display: "flex",
+                            flexDirection: "column",
+                            alignItems: "center",
+                            gap: 3,
+                            width: "50%",
+                            height: "100%",
+                        }}
+                    >
+                        {/* Experience Badge */}
+                        <Box
+                            sx={{
+                                backgroundColor: "#222",
+                                color: "#fff",
+                                borderRadius: 4,
+                                width: "100%",
+                                display: "flex",
+                                flexDirection: "column",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                height: "20%"
+                            }}
+                        >
+                            <Typography variant="h3" sx={{ fontWeight: "bold" }}>
+                                +10 Years
+                            </Typography>
+                            <Typography variant="body1" sx={{ color: "#ddd" }}>
+                                Experience
+                            </Typography>
                         </Box>
-                    </div>
-                </div>
+
+                        {/* Building Image */}
+                        <Box
+                            component="img"
+                            src={heroImg2}
+                            alt="Buildings"
+                            sx={{
+                                width: "100%",
+                                height: "80%",
+                                objectFit: "cover",
+                                borderRadius: 3,
+                            }}
+                        />
+                    </Box>
+
+                </Box>
+                <Box sx={{ width: "50%", display: "flex", flexDirection: "column", alignItems: "flex-start", height: "100%" }}>
+                    <Typography variant="h5" sx={{ color: "#3F8CFF", marginBottom: "1rem" }} fontFamily={"Evanston Tavern 1846"}>ABOUT US</Typography>
+                    <Typography variant="h2" sx={{ fontWeight: 600, fontFamily: "Outfit" }} gutterBottom>What is<br />Bluewaveasmedia for ?</Typography>
+                    <Typography variant="h6" sx={{ color: "#555555", fontFamily: "Lato" }}>“Bluewaves Media is a dynamic digital solutions company that thrives on creativity and innovation. We specialize in crafting engaging websites, intuitive user experiences, and result-driven digital campaigns that help businesses stand out in the competitive online landscape. Our team is passionate about turning ideas into reality, combining cutting-edge technology with strategic design to create meaningful connections between brands and their audiences. At Bluewaves Media, we don’t just deliver services—we create experiences that inspire, engage, and drive growth for our clients.”</Typography>
+                    <Button
+                        variant="contained"
+                        size="large"
+                        disableElevation
+                        sx={{
+                            bgcolor: "#3F8CFF",
+                            color: "#fff",
+                            borderRadius: "30px", // pill
+                            fontFamily: "Outfit, sans-serif",
+                            textTransform: "none",
+                            fontSize: "1.2rem",
+                            fontWeight: 600,
+                            px: 2.5,
+                            mt: "auto",
+                            boxShadow: "none",
+                            overflow: "visible", // allow the circle to hang outside
+                            "&:hover": { bgcolor: "#3575D9", boxShadow: "none" },
+                            ".MuiButton-endIcon": { marginLeft: 1 }, // smaller gap between text and circle
+                        }}
+                        endIcon={
+                            <Box
+                                sx={{
+                                    border: "2px solid #fff",
+                                    borderRadius: "50%",
+                                    width: 42,
+                                    height: 42,
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                    mr: "-10px", // pull the circle slightly outside the button edge
+                                    bgcolor: "transparent",
+                                }}
+                            >
+                                <Icon
+                                    icon="formkit:arrowright"
+                                    style={{ fontSize: 18, color: "white" }}
+                                />
+                            </Box>
+                        }
+
+                    >
+                        Read More
+                    </Button>
+                </Box>
             </Box>
 
             <Box sx={{ px: 10, width: "100%", textAlign: "center", my: 20 }}>
@@ -102,22 +160,22 @@ export default function About() {
                     bus alias pariatur esse rerum corporis quasi dolorum!
                     bus alias pariatur esse rerum corporis quasi dolorum!
                 </Typography>
-                <Box sx={{ width: "100%", display: "flex", justifyContent: "space-between", gap: 4, mt: 10 }}>
-                    <Box sx={{ color: "white", backgroundColor: "#3F8CFF", p: 3, borderRadius: "30px" }}>
+                <Box sx={{ width: "100%", display: "flex", justifyContent: "space-around", gap: 4, mt: 10 }}>
+                    <Box sx={{ color: "white", backgroundColor: "#3F8CFF", p: 2, borderRadius: "30px", height: "300px", width: "260px", boxShadow: "rgba(0, 0, 0, 0.25) 0px 10px 28px, rgba(0, 0, 0, 0.22) 0px 5px 10px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
                         <Typography variant="h5" gutterBottom>Freshness Guaranteed</Typography>
                         <Typography variant="body2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ullam ex doloremque, tempore aspernatur molestiae eum perspiciatis. Harum, dolores obcaecati, consequuntur commodi, consectetur aliquam quasi minus ipsa quod deleniti voluptatem.</Typography>
                     </Box>
-                    <Box sx={{ color: "#161B20", backgroundColor: "#fff", p: 3, borderRadius: "30px" }}>
-                        <Typography variant="h5" gutterBottom>Freshness Guaranteed</Typography>
-                        <Typography variant="body2" color="#666666">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ullam ex doloremque, tempore aspernatur molestiae eum perspiciatis. Harum, dolores obcaecati, consequuntur commodi, consectetur aliquam quasi minus ipsa quod deleniti voluptatem.</Typography>
-                    </Box>
-                    <Box sx={{ color: "white", backgroundColor: "#3F8CFF", p: 3, borderRadius: "30px" }}>
+                    <Box sx={{ color: "white", backgroundColor: "#3F8CFF", p: 2, borderRadius: "30px", height: "300px", width: "260px", boxShadow: "rgba(0, 0, 0, 0.25) 0px 10px 28px, rgba(0, 0, 0, 0.22) 0px 5px 10px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
                         <Typography variant="h5" gutterBottom>Freshness Guaranteed</Typography>
                         <Typography variant="body2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ullam ex doloremque, tempore aspernatur molestiae eum perspiciatis. Harum, dolores obcaecati, consequuntur commodi, consectetur aliquam quasi minus ipsa quod deleniti voluptatem.</Typography>
                     </Box>
-                    <Box sx={{ color: "#161B20", backgroundColor: "#fff", p: 3, borderRadius: "30px" }}>
+                    <Box sx={{ color: "white", backgroundColor: "#3F8CFF", p: 2, borderRadius: "30px", height: "300px", width: "260px", boxShadow: "rgba(0, 0, 0, 0.25) 0px 10px 28px, rgba(0, 0, 0, 0.22) 0px 5px 10px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
                         <Typography variant="h5" gutterBottom>Freshness Guaranteed</Typography>
-                        <Typography variant="body2" color="#666666">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ullam ex doloremque, tempore aspernatur molestiae eum perspiciatis. Harum, dolores obcaecati, consequuntur commodi, consectetur aliquam quasi minus ipsa quod deleniti voluptatem.</Typography>
+                        <Typography variant="body2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ullam ex doloremque, tempore aspernatur molestiae eum perspiciatis. Harum, dolores obcaecati, consequuntur commodi, consectetur aliquam quasi minus ipsa quod deleniti voluptatem.</Typography>
+                    </Box>
+                    <Box sx={{ color: "white", backgroundColor: "#3F8CFF", p: 2, borderRadius: "30px", height: "300px", width: "260px", boxShadow: "rgba(0, 0, 0, 0.25) 0px 10px 28px, rgba(0, 0, 0, 0.22) 0px 5px 10px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+                        <Typography variant="h5" gutterBottom>Freshness Guaranteed</Typography>
+                        <Typography variant="body2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ullam ex doloremque, tempore aspernatur molestiae eum perspiciatis. Harum, dolores obcaecati, consequuntur commodi, consectetur aliquam quasi minus ipsa quod deleniti voluptatem.</Typography>
                     </Box>
                 </Box>
             </Box>
@@ -270,23 +328,65 @@ export default function About() {
             </Box>
             <Box sx={{ backgroundColor: "#BCD7FF", display: "flex", justifyContent: "space-around", alignItems: "center", px: 6, py: 3 }}>
                 <Typography variant="h2" sx={{ letterSpacing: 5 }}>Our<br /><span style={{ color: "#fff", backgroundColor: "black", padding: 8, borderRadius: "15px" }}>Features</span></Typography>
-                <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", backgroundColor: "#3F8CFF", width: 300, height: 330, borderRadius: "30px", gap: 3 }}>
-                    <Box sx={{ cursor: "pointer", color: "#3F8CFF", backgroundColor: "white", borderRadius: "15px", width: 100, height: 100, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "3rem" }}>
+                <Box sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    flexDirection: "column",
+                    width: 300,
+                    height: 330,
+                    borderRadius: "30px",
+                    gap: 3,
+                    transition: "all 0.5s ease", // smooth hover transition
+                    "&:hover": {
+                        backgroundColor: "#3F8CFF",
+                        color: "white",
+                    }
+                }}>
+                    <Box sx={{ cursor: "pointer", color: "#3F8CFF", backgroundColor: "white", borderRadius: "15px", width: 140, height: 130, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "3rem" }}>
                         <Icon icon="material-symbols-light:support-agent-sharp" />
                     </Box>
-                    <Typography sx={{ color: "white", textAlign: "center" }}>24/7<br />customer support</Typography>
+                    <Typography sx={{ textAlign: "center" }}>24/7<br />customer support</Typography>
                 </Box>
-                <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", backgroundColor: "#3F8CFF", width: 300, height: 330, borderRadius: "30px", gap: 3 }}>
-                    <Box sx={{ cursor: "pointer", color: "#3F8CFF", backgroundColor: "white", borderRadius: "15px", width: 100, height: 100, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "3rem" }}>
+                <Box sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    flexDirection: "column",
+                    width: 300,
+                    height: 330,
+                    borderRadius: "30px",
+                    gap: 3,
+                    transition: "all 0.5s ease", // smooth hover transition
+                    "&:hover": {
+                        backgroundColor: "#3F8CFF",
+                        color: "white",
+                    }
+                }}>
+                    <Box sx={{ cursor: "pointer", color: "#3F8CFF", backgroundColor: "white", borderRadius: "15px", width: 140, height: 130, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "3rem" }}>
                         <Icon icon="mdi:register" />
                     </Box>
-                    <Typography sx={{ color: "white", textAlign: "center" }}>DLT<br />Registration</Typography>
+                    <Typography sx={{ textAlign: "center" }}>DLT<br />Registration</Typography>
                 </Box>
-                <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", backgroundColor: "#3F8CFF", width: 300, height: 330, borderRadius: "30px", gap: 3 }}>
-                    <Box sx={{ cursor: "pointer", color: "#3F8CFF", backgroundColor: "white", borderRadius: "15px", width: 100, height: 100, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "3rem" }}>
+                <Box sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    flexDirection: "column",
+                    width: 300,
+                    height: 330,
+                    borderRadius: "30px",
+                    gap: 3,
+                    transition: "all 0.5s ease", // smooth hover transition
+                    "&:hover": {
+                        backgroundColor: "#3F8CFF",
+                        color: "white",
+                    }
+                }}>
+                    <Box sx={{ cursor: "pointer", color: "#3F8CFF", backgroundColor: "white", borderRadius: "15px", width: 140, height: 130, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "3rem" }}>
                         <Icon icon="ic:baseline-whatsapp" />
                     </Box>
-                    <Typography sx={{ color: "white", textAlign: "center" }}>Whatsapp<br />On Boarding</Typography>
+                    <Typography sx={{ textAlign: "center"}}>Whatsapp<br />On Boarding</Typography>
                 </Box>
             </Box>
             <Box sx={{ px: 20, width: "100%", mt: 8 }}>
