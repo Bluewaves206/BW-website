@@ -6,11 +6,14 @@ export default function Layout() {
     return (
         <>
 
-            <Navbar />
-            <Box className="layout-content">
-                <Outlet />
+
+            <Box sx={{ width: '100%', overflowX: 'hidden' }}>
+                <Navbar />
+                <Box sx={{ width: '100%',mt: "8rem" }}>
+                    <Outlet />
+                </Box>
+                <Footer />
             </Box>
-            <Footer />
 
         </>
     );
