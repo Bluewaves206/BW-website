@@ -9,7 +9,7 @@ import { useRef, useState } from "react";
 
 export default function About() {
     const videoRef = useRef<HTMLVideoElement | null>(null);
-    const [isPlaying, setIsPlaying] = useState(false);
+    const [isPlaying, setIsPlaying] = useState(false);  
 
     const handlePlayPause = () => {
         const video = videoRef.current;
@@ -386,7 +386,7 @@ export default function About() {
                     <Box sx={{ cursor: "pointer", color: "#3F8CFF", backgroundColor: "white", borderRadius: "15px", width: 140, height: 130, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "3rem" }}>
                         <Icon icon="ic:baseline-whatsapp" />
                     </Box>
-                    <Typography sx={{ textAlign: "center"}}>Whatsapp<br />On Boarding</Typography>
+                    <Typography sx={{ textAlign: "center" }}>Whatsapp<br />On Boarding</Typography>
                 </Box>
             </Box>
             <Box sx={{ px: 20, width: "100%", mt: 8 }}>

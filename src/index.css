@@ -20,3 +20,6 @@ html,#root {
   color: #4E5156;
   font-weight: 600;
 }
+.navLink.nav-min{
+  font-size: 1.2rem;
+}
