@@ -5,7 +5,7 @@ import { Icon } from '@iconify/react';
 import { useEffect, useState } from "react";
 
 
-export default function Navbar() {
+export default function Navbar({ showDropdown, hideDropdown, serviceDrop }: { showDropdown: () => void, hideDropdown: () => void, serviceDrop: boolean }) {
     const [scrolled, setScrolled] = useState(false);
     const navigate = useNavigate();
 
@@ -28,9 +28,9 @@ export default function Navbar() {
                 m: 3,
                 borderRadius: 10,
                 transition: "all 0.3s ease-in-out",
-                backgroundColor: scrolled ? "rgba(255, 255, 255, 0.4)" : "transparent",
-                backdropFilter: scrolled ? "blur(8px)" : "none",
-                boxShadow: scrolled ? "0 4px 20px rgba(0,0,0,0.1)" : "none",
+                backgroundColor: scrolled && !serviceDrop ? "rgba(255, 255, 255, 0.4)" : "transparent",
+                backdropFilter: scrolled && !serviceDrop ? "blur(8px)" : "none",
+                boxShadow: scrolled && !serviceDrop ? "0 4px 20px rgba(0,0,0,0.1)" : "none",
             }}>
                 <Box component={'img'} src={logo} alt="logo" width={100} ></Box>
                 <Box
@@ -52,7 +52,11 @@ export default function Navbar() {
                 >
                     <NavLink to={'/'} className={({ isActive }) => isActive ? 'navLink active' : 'navLink'}>Home</NavLink >
                     <NavLink to={'/about'} className={({ isActive }) => isActive ? 'navLink active' : 'navLink'}>About Us</NavLink >
-                    <NavLink to={'/services'} className={({ isActive }) => isActive ? 'navLink active' : 'navLink'}>Services</NavLink >
+                    <NavLink to={' '} className={({ isActive }) => isActive ? 'navLink active' : 'navLink'} onMouseEnter={() => showDropdown()} onMouseLeave={() => hideDropdown()}>
+                        <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                            Services<Icon icon={'gridicons:dropdown'} />
+                        </Box>
+                    </NavLink>
                     <NavLink to={'/blog'} className={({ isActive }) => isActive ? 'navLink active' : 'navLink'}>Blogs</NavLink >
                 </Box>
                 <Button
@@ -92,5 +96,6 @@ export default function Navbar() {
                 </Button>
             </Toolbar>
         </AppBar>
+
     </>);
 }

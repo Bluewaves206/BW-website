@@ -16,10 +16,34 @@ html,#root {
   font-size: 1.1rem;
   font-weight: 200;
 }
+
+.navLink:hover{
+  color: #55575a;
+}
+
 .navLink.active{
   color: #4E5156;
   font-weight: 600;
 }
 .navLink.nav-min{
   font-size: 1.2rem;
+}
+
+.dropDown-navLink{
+  color: #8FA0AD;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 200;
+}
+
+.dropDown-navLink:hover{
+  color: #4E5156;
+  text-decoration: underline;
+}
+
+
+.dropDown-navLink.active{
+  color: #4E5156;
+  font-weight: 600;
+  text-decoration: underline;
 }
