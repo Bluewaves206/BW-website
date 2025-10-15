@@ -1,12 +1,13 @@
 import { AppBar, Box, Button, Toolbar } from "@mui/material";
 import logo from '../../assets/logo.png'
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { Icon } from '@iconify/react';
 import { useEffect, useState } from "react";
 
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -84,8 +85,10 @@ export default function Navbar() {
                             />
                         </Box>
                     }
+                    onClick={() => navigate('/contact')}
+
                 >
-                    Contact
+                    Contact Us
                 </Button>
             </Toolbar>
         </AppBar>

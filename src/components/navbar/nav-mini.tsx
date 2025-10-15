@@ -1,12 +1,14 @@
 import { AppBar, Box, Button, Toolbar } from "@mui/material";
 import { Icon } from '@iconify/react';
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 
 
 export default function NavMini({ sOpen }: { sOpen: (a: (b: boolean) => boolean) => void }) {
     const [scrolled, setScrolled] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -87,6 +89,7 @@ export default function NavMini({ sOpen }: { sOpen: (a: (b: boolean) => boolean)
                                 />
                             </Box>
                         }
+                        onClick={() => navigate('/contact')}
                     >
                         Contact
                     </Button>
