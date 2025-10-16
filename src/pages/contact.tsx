@@ -318,9 +318,9 @@ export default function Contact() {
                         "&::-webkit-scrollbar-track": { backgroundColor: "#f0f0f0" },
                     }}
                 >
-                    {[1, 2, 3, 4, 5, 6].map((item) => (
+                    {[1, 2, 3, 4, 5, 6].map((item, index) => (
                         <>
-                            <Box key={item} mb={1}>
+                            <Box key={index} mb={1}>
                                 <Accordion
                                     sx={{
                                         width: "100%",
@@ -356,16 +356,13 @@ export default function Contact() {
                                     </AccordionDetails>
                                 </Accordion>
                             </Box>
-                            <hr style={{ width: "60%", marginTop: 3, marginBottom: 10 }} />
+                            {index != 5 && <hr style={{ width: "60%", marginTop: 3, marginBottom: 10 }} />}
                         </>
                     ))}
                 </Box>
 
 
             </Box>
-
-
-            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
         </>
     )
 }
