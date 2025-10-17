@@ -58,6 +58,7 @@ export default function Navbar({ showDropdown, hideDropdown, serviceDrop }: { sh
                         </Box>
                     </NavLink>
                     <NavLink to={'/blog'} className={({ isActive }) => isActive ? 'navLink active' : 'navLink'}>Blogs</NavLink >
+                    <NavLink to={'/partnership'} className={({ isActive }) => isActive ? 'navLink active' : 'navLink'}>Partnership</NavLink >
                 </Box>
                 <Button
                     variant="contained"
