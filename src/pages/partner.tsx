@@ -8,22 +8,70 @@ import "swiper/swiper-bundle.css";
 export default function Partner() {
     return (
         <>
-            <Box sx={{ px: 10, width: "80%", height: "55vh", overflow: "hidden", display: "flex", justifyContent: "center", flexDirection: "column", alignItems: "flex-start" }}>
-                <Box sx={{ backgroundColor: "#EFEBFE", color: "#3F8CFF", p: 1, display: "flex", alignItems: "center", gap: 1, borderRadius: 3, fontSize: "1.7rem" }}>
+            <Box sx={{ px: 10, width: { sm: "100%", md: "80%" }, display: "flex", justifyContent: "center", flexDirection: "column", alignItems: { xs: "center", md: "flex-start" }, gap: 1, mt: { xs: 20, sm: 0 } }}>
+                <Box sx={{ backgroundColor: "#EFEBFE", color: "#3F8CFF", p: 1, display: "flex", alignItems: "center", gap: 1, borderRadius: 3, fontSize: "1.7rem", }}>
                     <Icon icon={'fluent:people-team-16-regular'} />
                     <span style={{ fontSize: "1.3rem" }}>Our Team</span>
                 </Box>
-                <Typography variant="h1" sx={{ fontWeight: 800, color: "#7D8592" }}>
-                    Let's Build Something
-                    <span style={{ color: "#3F8CFF", marginLeft: "16px" }}>Amazing Together</span>
+                <Box
+                    sx={{
+                        textAlign: { xs: "center", md: "left" },
+                    }}
+                >
+                    <Typography
+                        variant="h1"
+                        sx={{
+                            fontWeight: 800,
+                            color: "#7D8592",
+                            fontSize: {
+                                xs: "2rem",   // mobile (like h4)
+                                sm: "4rem",   // tablet (like h3)
+                                md: "5rem",   // desktop (like h2)
+                                lg: "6rem",   // large screen (like h1)
+                            },
+                            display: "inline"
+                        }}
+                    >
+                        <span>Let's Build Something</span>
+                        <span style={{ color: "#3F8CFF", marginLeft: "16px" }}>Amazing Together</span>
+                    </Typography>
+
                     <Button
-                        sx={{ ml: 3, backgroundColor: "#2C313F", color: "white", px: 2, py: 1, fontSize: "1.7rem", borderRadius: 7 }}
-                        endIcon={<Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", backgroundColor: "#3F8CFF", width: "40px", height: "40px", borderRadius: "50%" }}><Icon icon={'tabler:arrow-up-right'} /></Box>}
+                        sx={{
+                            mt: { xs: 3, md: 2 },
+                            backgroundColor: "#2C313F",
+                            color: "white",
+                            px: 2,
+                            py: 1,
+                            fontSize: { xs: "1rem", md: "1.7rem" },
+                            borderRadius: 7,
+                            display: "inline-flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            mx: { xs: 0, sm: 3 },
+                            mb: { xs: 0, sm: 8 },
+                        }}
+                        endIcon={
+                            <Box
+                                sx={{
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                    backgroundColor: "#3F8CFF",
+                                    width: "40px",
+                                    height: "40px",
+                                    borderRadius: "50%",
+                                }}
+                            >
+                                <Icon icon={'tabler:arrow-up-right'} />
+                            </Box>
+                        }
                     >
                         Become a Partner
                     </Button>
-                </Typography>
-                <Typography variant="h6" sx={{ color: "#7D8592" }}>Join our growing network of partners and unlock new opportunities for growth, innovation, and success.<br /> Together, we can achieve more than we ever could alone.</Typography>
+                </Box>
+
+                <Typography variant="h6" sx={{ color: "#7D8592", textAlign: { xs: "center", md: "left" } }}>Join our growing network of partners and unlock new opportunities for growth, innovation, and success.<br /> Together, we can achieve more than we ever could alone.</Typography>
             </Box>
             <Box
                 sx={{
@@ -51,50 +99,52 @@ export default function Partner() {
                 >
                     {/* First copy */}
                     <Box sx={{ display: "inline-flex", alignItems: "center" }}>
-                        <Typography variant="h2" sx={{ color: "#2C313F", fontWeight: 800, mx: 5 }}>
+                        <Typography variant="h2" sx={{ color: "#2C313F", fontWeight: 800, mx: 5, fontSize: { xs: '1.5rem', md: '3.5rem' } }}>
                             Let's Talk
                         </Typography>
-                        <Typography variant="h6" sx={{ color: "#2C313F", fontWeight: 600, mx: 5 }}>
+                        <Typography variant="h6" sx={{ color: "#2C313F", fontWeight: 600, mx: 5, }}>
                             GET IN TOUCH
                         </Typography>
-                        <Typography variant="h2" sx={{ color: "#2C313F", fontWeight: 800, mx: 5 }}>
+                        <Typography variant="h2" sx={{ color: "#2C313F", fontWeight: 800, mx: 5, fontSize: { xs: '1.5rem', md: '3.5rem' } }}>
                             Let's Talk
                         </Typography>
-                        <Typography variant="h6" sx={{ color: "#2C313F", fontWeight: 600, mx: 5 }}>
+                        <Typography variant="h6" sx={{ color: "#2C313F", fontWeight: 600, mx: 5, }}>
                             GET IN TOUCH
                         </Typography>
                     </Box>
 
                     {/* Second copy for seamless looping */}
                     <Box sx={{ display: "inline-flex", alignItems: "center" }}>
-                        <Typography variant="h2" sx={{ color: "#2C313F", fontWeight: 800, mx: 5 }}>
+                        <Typography variant="h2" sx={{ color: "#2C313F", fontWeight: 800, mx: 5, fontSize: { xs: '1.5rem', md: '3.5rem' } }}>
                             Let's Talk
                         </Typography>
-                        <Typography variant="h6" sx={{ color: "#2C313F", fontWeight: 600, mx: 5 }}>
+                        <Typography variant="h6" sx={{ color: "#2C313F", fontWeight: 600, mx: 5, }}>
                             GET IN TOUCH
                         </Typography>
-                        <Typography variant="h2" sx={{ color: "#2C313F", fontWeight: 800, mx: 5 }}>
+                        <Typography variant="h2" sx={{ color: "#2C313F", fontWeight: 800, mx: 5, fontSize: { xs: '1.5rem', md: '3.5rem' } }}>
                             Let's Talk
                         </Typography>
-                        <Typography variant="h6" sx={{ color: "#2C313F", fontWeight: 600, mx: 5 }}>
+                        <Typography variant="h6" sx={{ color: "#2C313F", fontWeight: 600, mx: 5, }}>
                             GET IN TOUCH
                         </Typography>
                     </Box>
                 </Box>
             </Box>
-            <Box sx={{ mt: 10, backgroundColor: "white", height: "80vh", display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", gap: 3 }}>
+            <Box sx={{ mt: 10, backgroundColor: "white", py: 10, display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", gap: 3 }}>
                 <Box sx={{ backgroundColor: "#EFEBFE", color: "#3F8CFF", p: 1, display: "flex", alignItems: "center", gap: 1, borderRadius: 3, fontSize: "1.7rem" }}>
                     <Icon icon={'fluent:people-team-16-regular'} />
                     <span style={{ fontSize: "1.3rem" }}>Our Team</span>
                 </Box>
-                <Typography variant="h3" sx={{ fontWeight: 600 }}>Why Partner with BlueWaves Media?</Typography>
-                <Typography variant="body1" sx={{ color: "#5A5C62", wordSpacing: 2 }}>Our partnerships are built on trust, innovation, and mutual success. Discover the benefits of joining our partner ecosystem.</Typography>
+                <Typography variant="h3" sx={{ fontWeight: 600, textAlign: "center", px: 1 }}>Why Partner with BlueWaves Media?</Typography>
+                <Typography variant="body1" sx={{ color: "#5A5C62", wordSpacing: 2, textAlign: "center", px: 1 }}>Our partnerships are built on trust, innovation, and mutual success. Discover the benefits of joining our partner ecosystem.</Typography>
 
-                <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-around", gap: 7 }}>
+                <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-around", gap: { xs: 3, md: 6 }, flexWrap: "wrap", px: 2 }}>
                     <Box
                         sx={{
-                            width: 200,
-                            height: 350,
+                            width: { xs: 200, md: 200 },
+                            height: {
+                                xs: 280, md: 300, lg: 350
+                            },
                             backgroundColor: "#E9F3FF",
                             borderRadius: "16px",
                             display: "flex",
@@ -129,8 +179,10 @@ export default function Partner() {
                     </Box>
                     <Box
                         sx={{
-                            width: 200,
-                            height: 350,
+                            width: { xs: 200, md: 200 },
+                            height: {
+                                xs: 280, md: 300, lg: 350
+                            },
                             backgroundColor: "#E9F3FF",
                             borderRadius: "16px",
                             display: "flex",
@@ -165,8 +217,10 @@ export default function Partner() {
                     </Box>
                     <Box
                         sx={{
-                            width: 200,
-                            height: 350,
+                            width: { xs: 200, md: 200 },
+                            height: {
+                                xs: 280, md: 300, lg: 350
+                            },
                             backgroundColor: "#E9F3FF",
                             borderRadius: "16px",
                             display: "flex",
@@ -201,8 +255,10 @@ export default function Partner() {
                     </Box>
                     <Box
                         sx={{
-                            width: 200,
-                            height: 350,
+                            width: { xs: 200, md: 200 },
+                            height: {
+                                xs: 280, md: 300, lg: 350
+                            },
                             backgroundColor: "#E9F3FF",
                             borderRadius: "16px",
                             display: "flex",
@@ -236,8 +292,8 @@ export default function Partner() {
 
                     </Box>
                 </Box>
-            </Box>
-            <Box sx={{ width: "100%", height: "80vh", background: "linear-gradient(45deg, hsla(216, 48%, 89%, 1) 36%, hsla(216, 61%, 83%, 1) 80%, hsla(216, 97%, 65%, 1) 100%)", mt: 7, display: "flex", alignItems: "flex-start", justifyContent: "center", flexDirection: "column", px: 8, }}>
+            </Box >
+            <Box sx={{ width: "100%", py: 8, background: "linear-gradient(45deg, hsla(216, 48%, 89%, 1) 36%, hsla(216, 61%, 83%, 1) 80%, hsla(216, 97%, 65%, 1) 100%)", mt: 7, display: "flex", alignItems: "flex-start", justifyContent: "center", flexDirection: "column", px: { xs: 4, sm: 6, md: 8 }, }}>
 
                 <Typography variant="subtitle1" sx={{ color: "#4E5156", fontWeight: 600, letterSpacing: 2, display: "flex", alignItems: "center", gap: 2 }}><Icon icon={'streamline:star-2-solid'} style={{ color: "#3F8CFF", }} />Partners & Sponsors</Typography>
                 <Typography variant="h2" sx={{ fontWeight: 600, color: "#4E5156" }} gutterBottom>Our program is backed by the best.</Typography>
@@ -245,7 +301,12 @@ export default function Partner() {
                 <Box sx={{ width: "100%", mt: 8 }}>
                     <Swiper modules={[Autoplay]}
                         spaceBetween={50}
-                        slidesPerView={5}
+                        breakpoints={{
+                            0: { slidesPerView: 1 },      // mobile
+                            580: { slidesPerView: 2 },    // small screen
+                            768: { slidesPerView: 4 },    // tablet
+                            1200: { slidesPerView: 5 },   // large screen
+                        }}
                         loop={true}
                         allowTouchMove={false}          // disables swiping
                         speed={3000}                    // makes slide transition slow and smooth
@@ -305,7 +366,12 @@ export default function Partner() {
                 <Box sx={{ width: "100%", mt: 2 }}>
                     <Swiper modules={[Autoplay]}
                         spaceBetween={50}
-                        slidesPerView={5}
+                        breakpoints={{
+                            0: { slidesPerView: 1 },      // mobile
+                            580: { slidesPerView: 2 },    // small screen
+                            768: { slidesPerView: 4 },    // tablet
+                            1200: { slidesPerView: 5 },   // large screen
+                        }}
                         loop={true}
                         allowTouchMove={false}          // disables swiping
                         speed={3000}                    // makes slide transition slow and smooth
@@ -365,32 +431,37 @@ export default function Partner() {
                 </Box>
             </Box>
             <Box sx={{
-                display: "flex", alignItems: "center", justifyContent: "center", mt: 10, width: "100%", height: "60vh", background: "#B8CEEE",
+                display: "flex", alignItems: "center", justifyContent: "center", mt: 10, width: "100%", py: 10, background: "#B8CEEE",
                 flexDirection: "column"
             }}>
                 <Typography variant="h2" sx={{ fontWeight: 600, textAlign: "center" }}>How to Become a<br /><span style={{ color: "white", backgroundColor: "#2C313F", borderRadius: 10, paddingLeft: "25px", paddingRight: "25px", paddingTop: "6px", paddingBottom: "6px" }}>Partner</span></Typography>
-                <Typography variant="h6" sx={{ mt: 4, textAlign: "center", color: "#4E5156", fontWeight: 500 }}>Our streamlined process ensures a smooth journey from initial contact to successful partnership.</Typography>
-                <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", mt: 5, width: "70%" }}>
-                    <Box sx={{ backgroundColor: "#ADDCE3", p: 2, border: "1px solid #97bcf59d", borderRadius: 4, width: "300px", height: "160px" }}>
+                <Typography variant="h6" sx={{ mt: 4, textAlign: "center", color: "#4E5156", fontWeight: 500, px: 1 }}>Our streamlined process ensures a smooth journey from initial contact to successful partnership.</Typography>
+                <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", mt: 5, width: { md: "70%", sm: "80%", xs: "90%" }, gap: 2, flexDirection: { xs: "column", sm: "row" } }}>
+                    <Box sx={{ backgroundColor: "#ADDCE3", p: 2, border: "1px solid #97bcf59d", borderRadius: 4, width: "300px", minHeight: "160px", maxHeight: "210px" }}>
                         <Typography variant="h6" gutterBottom>Initial Consultation</Typography>
                         <Typography variant="body2">We discuss your goals, capabilities, and how we can work together effectively.</Typography>
                     </Box>
-                    <Box sx={{ background: "linear-gradient(270deg, hsla(239, 52%, 80%, 1) 28%, hsla(239, 78%, 79%, 1) 64%, hsla(239, 89%, 74%, 1) 100%)", p: 2, borderRadius: 4, width: "300px", height: "160px" }}>
+                    <Box sx={{ background: "linear-gradient(270deg, hsla(239, 52%, 80%, 1) 28%, hsla(239, 78%, 79%, 1) 64%, hsla(239, 89%, 74%, 1) 100%)", p: 2, borderRadius: 4, width: "300px", minHeight: "160px", maxHeight: "210px" }}>
                         <Typography variant="h6" gutterBottom>Initial Consultation</Typography>
                         <Typography variant="body2">We discuss your goals, capabilities, and how we can work together effectively.</Typography>
                     </Box>
-                    <Box sx={{ backgroundColor: "#CDB8FF", p: 2, borderRadius: 4, width: "300px", height: "160px" }}>
+                    <Box sx={{ backgroundColor: "#CDB8FF", p: 2, borderRadius: 4, width: "300px", minHeight: "160px", maxHeight: "210px" }}>
                         <Typography variant="h6" gutterBottom>Initial Consultation</Typography>
                         <Typography variant="body2">We discuss your goals, capabilities, and how we can work together effectively.</Typography>
                     </Box>
                 </Box>
             </Box>
-            <Box sx={{ display: "flex", alignItems: "center", width: "100%", backgroundColor: "white", height: "80vh" }}>
+            <Box sx={{ display: "flex", alignItems: "center", width: "100%", backgroundColor: "white", py: 10, flexDirection: { xs: "column", md: "row" } }}>
                 <Box width={"50%"} height={"100%"} sx={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", }}>
-                    <Box sx={{ width: "50%" }}>
-                        <Typography variant="h2" sx={{ fontWeight: 600, mb: 6 }}><span style={{ color: "white", backgroundColor: "#2C313F", padding: "8px", borderRadius: "15px" }}>Goals</span> of Our<br /> Wholesale<br /> Company</Typography>
-                        <Typography variant="body2" sx={{ color: "#666666", fontWeight: 100, }}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti sit ab eveniet? Perferendis maxime laudantium omnis temporibus minima? Aperiam, ab aut? Et a reiciendis quisquam sint molestiae? Architecto, laboriosam maxime!</Typography>
-                    </Box>
+
+                    <Typography variant="h2" sx={{ fontWeight: 600, mb: 4, textAlign: "center", width: "60%" }}>
+                        <span style={{ color: "white", backgroundColor: "#2C313F", padding: "8px", borderRadius: "15px" }}>Goals</span>
+                        of Our Wholesale Company
+                    </Typography>
+                    <Typography sx={{ textAlign: "center", width: { sx: "80%", md: "60%" } }}>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto dignissimos accusamus quo beatae ab dolore animi neque perferendis possimus numquam tempora suscipit, in sint qui ea sapiente doloremque, nemo amet! lore
+                    </Typography>
+
                 </Box>
                 <Box width={"50%"} height={"100%"} sx={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", gap: 3 }}>
                     <Box sx={{

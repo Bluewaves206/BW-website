@@ -15,7 +15,7 @@ export default function Contact() {
                 alt="HeroImg"
                 sx={{
                     width: "100%",
-                    height: "100%", // or any fixed height like '500px'
+                    height: { xs: "1400px", md: "1000px" }, // or any fixed height like '500px'
                     objectFit: "cover", // keeps aspect ratio, crops overflow
                     position: "absolute",
                     top: 0,
@@ -23,16 +23,25 @@ export default function Contact() {
                 }}
             />
 
-            <Box sx={{ display: "flex", alignItems: "flex-start", justifyContent: "space-around", px: 7 }}>
+            <Box
+                sx={{
+                    display: "flex",
+                    alignItems: "flex-start",
+                    justifyContent: "space-around",
+                    flexWrap: "wrap",
+                    px: { xs: 2, sm: 4, md: 7 },
+                    gap: { xs: 4, md: 2, lg: 0 },
+                }}>
+                {/* Contact Us from */}
                 <Box
                     sx={{
                         backdropFilter: "blur(15px)",
                         boxShadow: "16.44px 17.09px 65.75px 0px rgba(41, 95, 131, 0.08)",
                         position: "relative",
-                        width: "38%",
+                        width: { xs: "100%", sm: "80%", md: "70%", lg: "38%" },
                         borderRadius: 5,
                         bgcolor: "rgba(255, 255, 255, 0.3)",
-                        p: 4,
+                        p: { xs: 3, md: 4 },
                         overflow: "hidden",
                         "&::before": { content: '""', position: "absolute", inset: 0, borderRadius: "15.78px", padding: "2px", background: "linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%)", WebkitMask: "linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)", maskComposite: "exclude", pointerEvents: "none" },
                         display: "flex",
@@ -42,10 +51,10 @@ export default function Contact() {
                         gap: 2,
                     }}>
                     <Typography variant="h4" sx={{ fontWeight: 600 }}>Get in touch</Typography>
-                    <Typography variant="body1" sx={{ color: "#777E90", width: "80%", textAlign: "center", fontWeight: 500 }}>Your email address will not be published. Required fields are marked *</Typography>
+                    <Typography variant="body1" sx={{ color: "#777E90", width: { xs: "100%", sm: "90%", md: "80%", }, textAlign: "center", fontWeight: 500 }}>Your email address will not be published. Required fields are marked *</Typography>
                     <TextField label="Name" variant="outlined"
                         sx={{
-                            width: "70%",
+                            width: { xs: "100%", sm: "80%", md: "75%", lg: "70%" },
                             "& .MuiOutlinedInput-root": {
                                 borderRadius: "22px", // make it fully rounded
                             },
@@ -53,7 +62,7 @@ export default function Contact() {
                     />
                     <TextField label="Email" variant="outlined"
                         sx={{
-                            width: "70%",
+                            width: { xs: "100%", sm: "80%", md: "75%", lg: "70%" },
                             "& .MuiOutlinedInput-root": {
                                 borderRadius: "22px", // make it fully rounded
                             },
@@ -65,7 +74,7 @@ export default function Contact() {
                         multiline
                         rows={4} // default visible rows
                         sx={{
-                            width: "70%",
+                            width: { xs: "100%", sm: "80%", md: "75%", lg: "70%" },
                             "& .MuiOutlinedInput-root": {
                                 borderRadius: "22px", // fully rounded
                                 padding: "10px", // optional, for better spacing
@@ -86,7 +95,7 @@ export default function Contact() {
                         }
                         sx={{
                             color: "#777E90",
-                            width: "70%",
+                            width: { xs: "100%", sm: "80%", md: "75%", lg: "70%" },
                             "& .MuiFormControlLabel-label": {
                                 fontSize: '0.9rem', // decrease font size
                             },
@@ -104,7 +113,7 @@ export default function Contact() {
                             borderRadius: 6,
                             fontFamily: 'Outfit, sans-serif',
                             textTransform: "none", // <-- add this
-                            fontSize: "1.2rem",
+                            fontSize: { xs: "1.5rem", sm: "1.2rem" },
                             boxShadow: "none",
                             mt: 2,
                         }}
@@ -113,8 +122,8 @@ export default function Contact() {
                                 sx={{
                                     backgroundColor: "white",
                                     borderRadius: "50%",
-                                    width: 30,
-                                    height: 30,
+                                    width: { xs: 40, sm: 30 },
+                                    height: { xs: 40, sm: 30 },
                                     display: "flex",
                                     alignItems: "center",
                                     justifyContent: "center",
@@ -138,16 +147,17 @@ export default function Contact() {
                     </Box>
 
                 </Box>
-                <Box sx={{ width: "40%", backgroundColor: "rgba(255, 255, 255)", boxShadow: "16.44px 17.09px 65.75px 0px rgba(41, 95, 131, 0.08)", zIndex: 1, borderRadius: 5, p: 3 }}>
-                    <Typography variant="h4" sx={{ fontWeight: 600, letterSpacing: 1 }}>Visit Our Office</Typography>
-                    <Box sx={{ display: "flex", alignItems: "flex-start", flexWrap: "wrap", justifyContent: "space-between", gap: 2 }}>
+                {/* Visit Our Office */}
+                <Box sx={{ width: { xs: "100%", sm: "80%", md: "70%", lg: "40%" }, backgroundColor: "rgba(255, 255, 255)", boxShadow: "16.44px 17.09px 65.75px 0px rgba(41, 95, 131, 0.08)", zIndex: 1, borderRadius: 5, p: { xs: 2, md: 3 }, }}>
+                    <Typography variant="h4" sx={{ fontWeight: 600, letterSpacing: 1, textAlign: { xs: "center", md: "left" } }}>Visit Our Office</Typography>
+                    <Box sx={{ display: "flex", alignItems: { xs: "center", md: "flex-start" }, flexWrap: "wrap", justifyContent: "space-between", gap: 2, flexDirection: { xs: "column", md: "row" } }}>
                         <Box
                             sx={{
                                 display: "flex",
                                 alignItems: "flex-start",
                                 borderRadius: "12px",
                                 p: 2.5,
-                                maxWidth: "45%",
+                                width: { xs: "100%", sm: "55%", md: "45%" },
                             }}
                         >
                             <Avatar
@@ -191,7 +201,7 @@ export default function Contact() {
                                 alignItems: "flex-start",
                                 borderRadius: "12px",
                                 p: 2.5,
-                                maxWidth: "45%",
+                                width: { xs: "100%", sm: "55%", md: "45%" },
                             }}
                         >
                             <Avatar
@@ -228,7 +238,7 @@ export default function Contact() {
                                 alignItems: "flex-start",
                                 borderRadius: "12px",
                                 p: 2.5,
-                                maxWidth: "45%",
+                                width: { xs: "100%", sm: "55%", md: "45%" },
                             }}
                         >
                             <Avatar
@@ -259,7 +269,7 @@ export default function Contact() {
                     </Box>
                 </Box>
 
-            </Box>
+            </Box >
 
             <Box sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center", my: 5 }}>
                 <iframe
@@ -272,14 +282,16 @@ export default function Contact() {
                     referrerPolicy="no-referrer-when-downgrade"  // ✅ camelCase
                 />
             </Box>
-            <Box sx={{ width: "100%", display: "flex", justifyContent: "center", alignItems: "center", my: 10, flexDirection: "column", gap: 2 }}>
-                <Typography variant="h3" sx={{ fontWeight: 600 }}>Frequently Asked Questions</Typography>
-                <Typography variant="body2" sx={{ color: "#4E5156" }} >Quick answers to common questions about working with BlueWaves Media</Typography>
+            <Box sx={{ width: "100%", display: "flex", justifyContent: "center", my: 10, flexDirection: "column", gap: 2 }}>
+                <Typography variant="h3" sx={{ fontWeight: 600, textAlign: "center", fontSize: { xs: "1.75rem", sm: "2rem", md: "2.5rem" } }}>Frequently Asked Questions</Typography>
+                <Typography variant="body2" sx={{ color: "#4E5156",textAlign:"center",px:2 }} >Quick answers to common questions about working with BlueWaves Media</Typography>
                 <Box
                     style={{
                         display: "flex",
                         justifyContent: "center",
-                        gap: "1.5rem",
+                        gap: 2,
+                        flexWrap: "wrap",
+
                     }}
                 >
                     {filters.map((item) => (

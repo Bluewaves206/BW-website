@@ -21,7 +21,7 @@ export default function Layout() {
     };
 
 
-    const isMobile = useMediaQuery('(max-width:768px)'); // breakpoint for mobile
+    const isMobile = useMediaQuery('(max-width:1000px)'); // breakpoint for mobile
 
     const toggleDrawer = (newOpen: boolean) => () => {
         setOpen(newOpen);
