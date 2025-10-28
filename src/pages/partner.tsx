@@ -98,33 +98,33 @@ export default function Partner() {
                     }}
                 >
                     {/* First copy */}
-                    <Box sx={{ display: "inline-flex", alignItems: "center" }}>
-                        <Typography variant="h2" sx={{ color: "#2C313F", fontWeight: 800, mx: 5, fontSize: { xs: '1.5rem', md: '3.5rem' } }}>
+                    <Box sx={{ display: "inline-flex", alignItems: "center", gap: { xs: 5, md: 10 }, mx: { xs: 2, md: 5 } }}>
+                        <Typography variant="h2" sx={{ color: "#2C313F", fontWeight: 800, fontSize: { xs: '1.5rem', md: '3.5rem' } }}>
                             Let's Talk
                         </Typography>
-                        <Typography variant="h6" sx={{ color: "#2C313F", fontWeight: 600, mx: 5, }}>
+                        <Typography variant="h6" sx={{ color: "#2C313F", fontWeight: 600, }}>
                             GET IN TOUCH
                         </Typography>
-                        <Typography variant="h2" sx={{ color: "#2C313F", fontWeight: 800, mx: 5, fontSize: { xs: '1.5rem', md: '3.5rem' } }}>
+                        <Typography variant="h2" sx={{ color: "#2C313F", fontWeight: 800, fontSize: { xs: '1.5rem', md: '3.5rem' } }}>
                             Let's Talk
                         </Typography>
-                        <Typography variant="h6" sx={{ color: "#2C313F", fontWeight: 600, mx: 5, }}>
+                        <Typography variant="h6" sx={{ color: "#2C313F", fontWeight: 600, }}>
                             GET IN TOUCH
                         </Typography>
                     </Box>
 
                     {/* Second copy for seamless looping */}
-                    <Box sx={{ display: "inline-flex", alignItems: "center" }}>
-                        <Typography variant="h2" sx={{ color: "#2C313F", fontWeight: 800, mx: 5, fontSize: { xs: '1.5rem', md: '3.5rem' } }}>
+                    <Box sx={{ display: "inline-flex", alignItems: "center", gap: { xs: 5, md: 10 }, mx: { xs: 2, md: 5 } }}>
+                        <Typography variant="h2" sx={{ color: "#2C313F", fontWeight: 800, fontSize: { xs: '1.5rem', md: '3.5rem' } }}>
                             Let's Talk
                         </Typography>
-                        <Typography variant="h6" sx={{ color: "#2C313F", fontWeight: 600, mx: 5, }}>
+                        <Typography variant="h6" sx={{ color: "#2C313F", fontWeight: 600, }}>
                             GET IN TOUCH
                         </Typography>
-                        <Typography variant="h2" sx={{ color: "#2C313F", fontWeight: 800, mx: 5, fontSize: { xs: '1.5rem', md: '3.5rem' } }}>
+                        <Typography variant="h2" sx={{ color: "#2C313F", fontWeight: 800, fontSize: { xs: '1.5rem', md: '3.5rem' } }}>
                             Let's Talk
                         </Typography>
-                        <Typography variant="h6" sx={{ color: "#2C313F", fontWeight: 600, mx: 5, }}>
+                        <Typography variant="h6" sx={{ color: "#2C313F", fontWeight: 600, }}>
                             GET IN TOUCH
                         </Typography>
                     </Box>
@@ -451,35 +451,36 @@ export default function Partner() {
                     </Box>
                 </Box>
             </Box>
-            <Box sx={{ display: "flex", alignItems: "center", width: "100%", backgroundColor: "white", py: 10, flexDirection: { xs: "column", md: "row" } }}>
-                <Box width={"50%"} height={"100%"} sx={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", }}>
+            <Box sx={{ display: "flex", alignItems: "center", width: "100%", backgroundColor: "white", py: 10, flexDirection: { xs: "column", md: "row" }, gap: 7 }}>
+                <Box width={{ xs: "100%", sm: "40%" }} height={"100%"} sx={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", }}>
 
-                    <Typography variant="h2" sx={{ fontWeight: 600, mb: 4, textAlign: "center", width: "60%" }}>
+                    <Typography variant="h2" sx={{ fontWeight: 600, mb: 4, textAlign: "center", width: { xs: "70%", md: "50%" } }}>
                         <span style={{ color: "white", backgroundColor: "#2C313F", padding: "8px", borderRadius: "15px" }}>Goals</span>
                         of Our Wholesale Company
                     </Typography>
-                    <Typography sx={{ textAlign: "center", width: { sx: "80%", md: "60%" } }}>
+                    <Typography sx={{ textAlign: "center", width: { xs: "80%", md: "60%" } }}>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto dignissimos accusamus quo beatae ab dolore animi neque perferendis possimus numquam tempora suscipit, in sint qui ea sapiente doloremque, nemo amet! lore
                     </Typography>
 
                 </Box>
-                <Box width={"50%"} height={"100%"} sx={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", gap: 3 }}>
+                <Box width={{ xs: "100%", sm: "60%" }} height={"100%"} sx={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", gap: 3 }}>
                     <Box sx={{
                         boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
                         borderRadius: 8,
                         p: 3,
                         pl: 5,
-                        maxWidth: 500,
+                        maxWidth: { xs: 300, sm: 400, md: 500 },
                         position: "relative",
                     }}>
                         <Typography variant="h4" sx={{ fontWeight: 600, mb: 3 }}>Contact Satisfaction</Typography>
                         <Typography variant="caption" sx={{ color: "#666666" }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero ullam incidunt asperiores, porro, sit explicabo tempora placeat mpore odit fuga.</Typography>
                         <Avatar
                             sx={{
+                                display: { xs: "none", sm: "flex" },
                                 width: 60,   // increases Avatar width
                                 height: 60,  // increases Avatar height
                                 position: "absolute",
-                                bottom: 50,
+                                bottom: "30%",
                                 left: -30,
                                 color: "white",
                                 backgroundColor: "#3F8CFF"
@@ -492,7 +493,7 @@ export default function Partner() {
                         boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
                         borderRadius: "20px",
                         p: 3,
-                        maxWidth: 500,
+                        maxWidth: { xs: 300, sm: 400, md: 500 },
                         pl: 5,
                         position: "relative"
                     }}>
@@ -500,10 +501,11 @@ export default function Partner() {
                         <Typography variant="caption" sx={{ color: "#666666" }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero ullam incidunt asperiores, porro, sit explicabo tempora placeat mpore odit fuga.</Typography>
                         <Avatar
                             sx={{
+                                display: { xs: "none", sm: "flex" },
                                 width: 60,   // increases Avatar width
                                 height: 60,  // increases Avatar height
                                 position: "absolute",
-                                bottom: 50,
+                                bottom: "30%",
                                 left: -30,
                                 color: "white",
                                 backgroundColor: "#3F8CFF"
@@ -516,7 +518,7 @@ export default function Partner() {
                         boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
                         borderRadius: "20px",
                         p: 3,
-                        maxWidth: 500,
+                        maxWidth: { xs: 300, sm: 400, md: 500 },
                         pl: 5,
                         position: "relative"
                     }}>
@@ -524,10 +526,11 @@ export default function Partner() {
                         <Typography variant="caption" sx={{ color: "#666666" }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero ullam incidunt asperiores, porro, sit explicabo tempora placeat mpore odit fuga.</Typography>
                         <Avatar
                             sx={{
+                                display: { xs: "none", sm: "flex" },
                                 width: 60,   // increases Avatar width
                                 height: 60,  // increases Avatar height
                                 position: "absolute",
-                                bottom: 50,
+                                bottom: "30%",
                                 left: -30,
                                 color: "white",
                                 backgroundColor: "#3F8CFF"
@@ -538,7 +541,7 @@ export default function Partner() {
                     </Box>
                 </Box>
             </Box>
-            <Box sx={{ backgroundColor: "#F4F9FD", width: "100%", height: "60vh", p: 12 }}>
+            <Box sx={{ backgroundColor: "#F4F9FD", width: "100%", p: { xs: 5, sm: 10, md: 12 } }}>
                 <Typography variant="subtitle1" sx={{ color: "#4E5156", fontWeight: 600, letterSpacing: 2, display: "flex", alignItems: "center", gap: 2 }}><Icon icon={'streamline:star-2-solid'} style={{ color: "#3F8CFF", }} />Partners & Sponsors</Typography>
                 <Typography variant="h2" sx={{ color: "#3F8CFF", fontWeight: 600 }} gutterBottom>Have Questions About Partnership?</Typography>
                 <Typography variant="h5" sx={{ color: "#4E5156", fontWeight: 500 }}>Our partnership team is here to help you understand how we can work together.</Typography>
@@ -550,7 +553,7 @@ export default function Partner() {
                                 alignItems: "flex-start",
                                 borderRadius: "12px",
                                 p: 2.5,
-                                maxWidth: "45%",
+                                maxWidth: "230px",
                             }}
                         >
                             <Avatar
@@ -594,7 +597,7 @@ export default function Partner() {
                                 alignItems: "flex-start",
                                 borderRadius: "12px",
                                 p: 2.5,
-                                maxWidth: "45%",
+                                maxWidth: "230px",
                             }}
                         >
                             <Avatar
@@ -631,7 +634,7 @@ export default function Partner() {
                                 alignItems: "flex-start",
                                 borderRadius: "12px",
                                 p: 2.5,
-                                maxWidth: "45%",
+                                maxWidth: "230px",
                             }}
                         >
                             <Avatar

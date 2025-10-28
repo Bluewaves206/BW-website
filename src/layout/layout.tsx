@@ -36,7 +36,7 @@ export default function Layout() {
                         <ServicesDropDown />
                     </Box>
                 }
-                <Box sx={{ width: '100%', mt: "8rem" }}>
+                <Box sx={{ width: '100%', mt: "7rem" }}>
                     <Outlet />
                     <DrawerMini open={open} togglerDrawer={toggleDrawer} setOpen={setOpen} />
                 </Box>
