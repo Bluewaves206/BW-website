@@ -1,6 +1,5 @@
 import { Box, Button, Container, Paper, TextField, Typography } from "@mui/material";
 import HomeImg from '../assets/homePageTop.png';
-import FooterImg from '../assets/footerTopimage.png';
 import LineImg from '../assets/lineImg.png';
 import WhoImg from "../assets/whoImg.png"
 import ContactImg from "../assets/contactHome.png";
@@ -275,7 +274,7 @@ export default function Home() {
                 </Box>
                 <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
             </Container>
-            <Box component={'img'} src={FooterImg} alt="footerImg" sx={{ backgroundSize: "cover", width: "100%", position: "relataive" }} />
+
 
         </>
     );

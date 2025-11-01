@@ -292,7 +292,7 @@ const Blogs = () => {
             }} />
         </Box>
       </Container>
-      <Box sx={{ width: "100%", display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", backgroundImage: `url(${Pic2})`, backgroundSize: "cover", backgroundPosition: "center", mt: 15, mb: 5, height: 320, position: "relative" }}>
+      <Box sx={{ width: "100%", display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", backgroundImage: `url(${Pic2})`, backgroundSize: "cover", backgroundPosition: "center", mt: 15, height: 320, position: "relative" }}>
         <Paper
           elevation={1}
           sx={{

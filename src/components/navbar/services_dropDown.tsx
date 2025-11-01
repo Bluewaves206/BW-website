@@ -10,7 +10,7 @@ import WebDevImg from "../../assets/webdevImg.png";
 import IVRImg from "../../assets/IVRNav.png";
 
 
-export default function ServicesDropDown() {
+export default function ServicesDropDown({ setServiceDrop }: { setServiceDrop: (a: boolean) => void }) {
     const [hoverItem, setHoverItem] = useState<number>(0);
     const Services = [
         {
@@ -93,6 +93,7 @@ export default function ServicesDropDown() {
             },
             img: SMSImg
         },
+
     ]
     return (
         <Box sx={{ height: "450px", backgroundColor: 'white', width: "100%", position: "fixed", zIndex: 2, borderBottomLeftRadius: 30, borderBottomRightRadius: 30 }}
@@ -117,7 +118,7 @@ export default function ServicesDropDown() {
 
                 }}>
                     {Services.map((item, index) => (
-                        <NavLink key={index} to={item.link} className={({ isActive }) => isActive ? 'dropDown-navLink active' : 'dropDown-navLink'} onMouseEnter={() => setHoverItem(index)}>{item.name}</NavLink >
+                        <NavLink key={index} to={item.link} className={({ isActive }) => isActive ? 'dropDown-navLink active' : 'dropDown-navLink'} onMouseEnter={() => setHoverItem(index)} onClick={() => { setServiceDrop(false) }}>{item.name}</NavLink >
                     ))}
 
                 </Box>

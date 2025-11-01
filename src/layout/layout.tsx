@@ -33,7 +33,7 @@ export default function Layout() {
                 {isMobile ? <NavMini sOpen={setOpen} /> : <Navbar showDropdown={showDropdown} hideDropdown={hideDropdown} serviceDrop={serviceDrop} />}
                 {serviceDrop &&
                     <Box onMouseEnter={showDropdown} onMouseLeave={hideDropdown}>
-                        <ServicesDropDown />
+                        <ServicesDropDown setServiceDrop={setServiceDrop} />
                     </Box>
                 }
                 <Box sx={{ width: '100%', mt: "7rem" }}>
