@@ -55,7 +55,7 @@ export default function ServicesDropDown({ setServiceDrop }: { setServiceDrop: (
         },
         {
             name: "Website Development",
-            link: "/webDev",
+            link: "/webdev",
             about: {
                 head: `“Web Dev”`,
                 body: "Manage clients, track sales, and grow your business — all in one powerful platform.",
@@ -96,48 +96,50 @@ export default function ServicesDropDown({ setServiceDrop }: { setServiceDrop: (
 
     ]
     return (
-        <Box sx={{ height: "450px", backgroundColor: 'white', width: "100%", position: "fixed", zIndex: 2, borderBottomLeftRadius: 30, borderBottomRightRadius: 30 }}
+        <Box sx={{display:"flex",justifyContent:"center"}}>
+            <Box sx={{ height: "auto", backgroundColor: 'white', width: "97%", position: "fixed", zIndex: 2, borderBottomLeftRadius: 30, borderBottomRightRadius: 30 }}
 
-        >
-            <Box sx={{
-                mt: "8rem", px: 4,
-                py: 2,
-                display: "grid",
-                gridTemplateColumns: "35% 65%;", /* First smaller, second larger */
-                gap: "20px",
-                height: "70%"
-            }}>
-
+            >
                 <Box sx={{
-                    height: "100%", p: 2,
+                    mt: "8rem", px: 4,
+                    py: 2,
                     display: "grid",
-                    gridTemplateRows: "repeat(auto-fill, minmax(40px, 1fr))", // each item height
-                    gridAutoFlow: "column", // fill column first
-                    rowGap: 1,
-                    borderRight: "3px solid #c2c2c2"
-
+                    gridTemplateColumns: "35% 65%;", /* First smaller, second larger */
+                    gap: "20px",
+                    height: "70%"
                 }}>
-                    {Services.map((item, index) => (
-                        <NavLink key={index} to={item.link} className={({ isActive }) => isActive ? 'dropDown-navLink active' : 'dropDown-navLink'} onMouseEnter={() => setHoverItem(index)} onClick={() => { setServiceDrop(false) }}>{item.name}</NavLink >
-                    ))}
 
-                </Box>
-                <Box sx={{
-                    height: "100%",
-                    display: "grid",
-                    p: 2,
-                    gridTemplateColumns: "60% 40%;",
-                    gap: "10px",
-                }}>
-                    <Box sx={{ display: "flex", flexDirection: "column" }}>
-                        <Typography sx={{ fontWeight: 600, fontSize: "2.67rem" }}>{Services[hoverItem].about.head}</Typography>
-                        <Typography variant="h6" sx={{ fontWeight: 100, color: "#404040" }}>{Services[hoverItem].about.body}</Typography>
-                        <Typography sx={{ mt: "auto", color: "#404040" }}>{Services[hoverItem].about.foot}</Typography>
+                    <Box sx={{
+                        height: "100%", p: 2,
+                        display: "grid",
+                        gridTemplateRows: "repeat(auto-fill, minmax(40px, 1fr))", // each item height
+                        gridAutoFlow: "column", // fill column first
+                        rowGap: 1,
+                        borderRight: "3px solid #c2c2c2"
+
+                    }}>
+                        {Services.map((item, index) => (
+                            <NavLink key={index} to={item.link} className={({ isActive }) => isActive ? 'dropDown-navLink active' : 'dropDown-navLink'} onMouseEnter={() => setHoverItem(index)} onClick={() => { setServiceDrop(false) }}>{item.name}</NavLink >
+                        ))}
+
                     </Box>
-                    <Box component={'img'} src={Services[hoverItem].img} width={'100%'} height={'250px'} sx={{ objectFit: "cover", borderRadius: 5 }} alt="service"></Box>
-                </Box>
+                    <Box sx={{
+                        height: "100%",
+                        display: "grid",
+                        p: 2,
+                        gridTemplateColumns: "60% 40%;",
+                        gap: "10px",
+                    }}>
+                        <Box sx={{ display: "flex", flexDirection: "column" }}>
+                            <Typography sx={{ fontWeight: 600, fontSize: "2.67rem" }}>{Services[hoverItem].about.head}</Typography>
+                            <Typography variant="h6" sx={{ fontWeight: 100, color: "#404040" }}>{Services[hoverItem].about.body}</Typography>
+                            <Typography sx={{ mt: "auto", color: "#404040" }}>{Services[hoverItem].about.foot}</Typography>
+                        </Box>
+                        <Box component={'img'} src={Services[hoverItem].img} width={'100%'} height={'250px'} sx={{ objectFit: "cover", borderRadius: 5 }} alt="service"></Box>
+                    </Box>
 
-            </Box>
-        </Box >
+                </Box>
+            </Box >
+        </Box>
     )
 }

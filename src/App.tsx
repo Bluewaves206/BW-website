@@ -10,6 +10,8 @@ import ScrollToTop from "./components/scroll-top";
 import ViewBlog from "./pages/view-blogs";
 import Error from "./pages/error";
 import SMS from "./pages/sms";
+import WebDev from "./pages/webdev";
+import BulkEmail from "./pages/bulkEmail";
 
 
 function App() {
@@ -31,6 +33,8 @@ function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/partnership" element={<Partner />} />
               <Route path="/sms" element={<SMS />} />
+              <Route path="/webdev" element={<WebDev />} />
+              <Route path="/Bmail" element={<BulkEmail />} />
               <Route path="blogview" element={<ViewBlog blogTitle="Convolutional Neural Network"
                 blogContent={`<p class="MsoNormal" style="-webkit-text-stroke-width:0px;background-color:rgb(255, 255, 255);color:rgb(34, 34, 34);font-family:&quot;Times New Roman&quot;, &quot;serif&quot;;font-size:12pt;font-style:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-weight:400;letter-spacing:normal;margin:0px 0in;orphans:2;text-align:start;text-decoration-color:initial;text-decoration-style:initial;text-decoration-thickness:initial;text-indent:0px;text-transform:none;white-space:normal;widows:2;word-spacing:0px;">
     Dear Sir/Mam,
