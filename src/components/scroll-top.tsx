@@ -26,6 +26,11 @@ function ScrollToTop() {
             body.style.setProperty("background-color", "white", "important");
             html.style.setProperty("background-color", "white", "important");
         }
+        else if (pathname === "/") {
+            root.style.setProperty("background-color", "white", "important");
+            body.style.setProperty("background-color", "white", "important");
+            html.style.setProperty("background-color", "white", "important");
+        }
         else {
             root.style.setProperty("background-color", "#d4dff0", "important");
             body.style.setProperty("background-color", "#d4dff0", "important");
