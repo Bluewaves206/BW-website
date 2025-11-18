@@ -4,6 +4,7 @@ import LineImg from "../assets/lineImg.png"
 import states from "../assets/homeStates image.png";
 import WhoImg from "../assets/whoImg.png"
 import homeArticle from "../assets/HomeArticleImg.png";
+import footerImg from "../assets/footerTopimage.png"
 import "swiper/swiper-bundle.css";
 
 
@@ -758,11 +759,11 @@ export default function Home() {
                 </Box>
             </Box>
 
-            <Box sx={{ mt: 10, display: "flex", justifyContent: "center", alignItems: "center",flexDirection:"column" }}>
+            <Box sx={{ mt: 10, display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column" }}>
                 <Box width={"40%"} sx={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column" }}>
                     <Typography variant="h2" sx={{ textAlign: "center", mb: 10 }}>Hear from Our Happy Clients</Typography>
                 </Box>
-                <Box width={"70%"} sx={{ display: "flex", justifyContent: "center", alignItems: "center", gap: 3 }}>
+                <Box width={"85%"} sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 3 }}>
                     <Button
                         sx={{
                             backgroundColor: "#E3E6F0",
@@ -782,7 +783,7 @@ export default function Home() {
                             style={{ width: "20px", height: "20px", color: "#FFFFFF" }}
                         />
                     </Button>
-                    <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", gap: 2 }}>
+                    <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", gap: 2, width: "50%" }}>
                         <Typography variant="h6" sx={{ textAlign: "center" }}>“Bluewaves Media transformed our customer engagement strategy completely. Their RCS and SMS automation boosted our campaign conversions by over 40%.”</Typography>
                         <Typography variant="h6" sx={{ textAlign: "center", color: "#000", fontWeight: 600 }}>John Doe</Typography>
                         <Typography variant="overline" sx={{ textAlign: "center", color: "#000" }}>CEO, Blue Waves Media</Typography>
@@ -810,7 +811,92 @@ export default function Home() {
                 </Box>
 
             </Box>
-            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+            <Box sx={{ width: "100%", display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", backgroundImage: `url(${footerImg})`, backgroundSize: "cover", backgroundPosition: "center", mt: 15, height: 320, position: "relative" }}>
+                <Paper
+                    elevation={1}
+                    sx={{
+                        borderRadius: "20px",
+                        p: 4,
+                        width: "90%",
+
+                        backdropFilter: "blur(43.39px)",
+                        boxShadow: "16.44px 17.09px 65.75px 0px rgba(41, 95, 131, 0.08)",
+                        bgcolor: "rgba(255, 255, 255, 0.3)",
+                        overflow: "hidden",
+                        "&::before": { content: '""', position: "absolute", inset: 0, borderRadius: "15.78px", padding: "2px", background: "linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%)", WebkitMask: "linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)", maskComposite: "exclude", pointerEvents: "none" }
+                    }}
+                >
+                    <Typography
+                        variant="h4"
+                        sx={{
+                            fontFamily: "Outfit, sans-serif",
+                        }}
+                        gutterBottom
+                    >
+                        Join Our Newsletter
+                    </Typography>
+
+                    {/* Form Row */}
+                    <Box
+                        component="form"
+                        sx={{
+                            display: "flex",
+                            alignItems: "flex-end",
+                            justifyContent: "space-between",
+                            flexWrap: "wrap",
+                            gap: 2,
+                        }}
+                    >
+
+                        {/* Email Address */}
+                        <Box
+                            sx={{
+                                width: { xs: "100%", sm: "60%", md: "40%" },
+                                display: "flex",
+                                alignItems: "center",
+                                backgroundColor: "white",
+                                borderRadius: "50px",
+                                boxShadow: "0px 4px 20px rgba(0,0,0,0.1)",
+                                overflow: "hidden",
+                                p: "4px",
+                            }}
+                        >
+                            <TextField
+                                placeholder="Enter Your Email"
+                                variant="outlined"
+                                size="small"
+                                sx={{
+                                    width: "85%",
+                                }}
+                                InputProps={{
+                                    sx: {
+                                        border: "none",
+                                        "& fieldset": { border: "none" },
+                                        fontSize: "15px",
+                                        pl: 2,
+                                    },
+                                }}
+                            />
+                            <Button
+                                variant="contained"
+                                sx={{
+                                    borderRadius: "40px",
+                                    px: 2,
+                                    textTransform: "none",
+                                    fontWeight: 600,
+                                    boxShadow: "0 4px 8px rgba(0,0,0,0.15)",
+                                    "&:hover": {
+                                        boxShadow: "0 6px 12px rgba(0,0,0,0.2)",
+                                    },
+                                }}
+                            >
+                                Join us
+                            </Button>
+                        </Box>
+                    </Box>
+                </Paper>
+            </Box >
 
 
 

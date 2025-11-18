@@ -12,6 +12,7 @@ import Error from "./pages/error";
 import SMS from "./pages/sms";
 import WebDev from "./pages/webdev";
 import BulkEmail from "./pages/bulkEmail";
+import Whatsapp from "./pages/whatsapp";
 
 
 function App() {
@@ -81,6 +82,7 @@ function App() {
     </li>
 </ol>`}
                 blogImg="src/assets/DemoVid.png" />} />
+              <Route path="/whatsapp" element={<Whatsapp />} />
               <Route path="*" element={<Error />} />
             </Route>
 
