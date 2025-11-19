@@ -1,6 +1,9 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Accordion, AccordionDetails, AccordionSummary, Box, Button, Typography } from "@mui/material";
 import heroImg from "../assets/whatsappHeroImg.png"
 import articleImg from "../assets/whatsappArticle.png";
+import whatsappAboutImg from "../assets/whatsappAbout.png";
+import whatsappFooter from "../assets/whatsappFooter.png";
+import footerImg from "../assets/smsLastImg.png"
 import { Icon } from "@iconify/react";
 
 export default function Whatsapp() {
@@ -291,10 +294,113 @@ export default function Whatsapp() {
                 </Box>
                 <Typography variant="h2" sx={{ textAlign: "center", mt: 5 }}>Why Choose <span style={{ color: "white", padding: "8px 12px", backgroundColor: "#21A871", borderRadius: 20 }}>Whatsapp</span> Verified</Typography>
                 <Typography variant="body1" sx={{ textAlign: "center", color: "#667085", mt: 6 }}>Your customers trust what they can verify — and a verified badge builds that trust instantly.</Typography>
+                <Box
+                    sx={{
+                        display: "grid",
+                        gridTemplateColumns: { md: "65% 35%", xs: "1fr" },
+                        columnGap: "5px",
+                        rowGap: "20px",
+                        width: "100%",
+                        mt: 4,
+                        px: 10
+                    }}
+                >
+                    <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+                        <Typography variant="h4">Our pool experts are committed to providing reliable, affordable services to every customer. What separates us from other pool service companies? We’re glad you asked.</Typography>
+                        <Box
+                            sx={{
+                                width: "100%",       // full width
+                                maxHeight: 800,      // height of scrollable area
+                                display: "flex",     // enable flexbox
+                                flexDirection: "column",
+                                alignItems: "center",
+                                overflowY: "auto",   // enable vertical scroll
+                                px: 2,               // padding on sides
+                                py: 1,
+                                "&::-webkit-scrollbar": { width: 8 }, // optional: custom scrollbar
+                                "&::-webkit-scrollbar-thumb": { backgroundColor: "#ccc", borderRadius: 4 },
+                                "&::-webkit-scrollbar-track": { backgroundColor: "#f0f0f0" },
+                            }}
+                        >
+                            {[1, 2, 3].map((item, index) => (
+                                <>
+                                    <Box key={index} mb={1}>
+                                        <Accordion
+                                            sx={{
+                                                width: "100%",
+                                                borderRadius: 4,
+                                                overflow: "hidden",
+                                                p: 2,
+                                                backgroundColor: "transparent",
+                                                "&.Mui-expanded": {
+                                                    borderRadius: 4,
+                                                    backgroundColor: "#fff",
+                                                    margin: "auto",
+                                                },
+                                                boxShadow: "none",
+                                            }}
+                                            elevation={0}
+                                        >
+                                            <AccordionSummary
+                                                expandIcon={<Icon icon={"mdi:chevron-down"} fontSize="2rem" />}
+                                                aria-controls={`panel${item}-content`}
+                                                id={`panel${item}-header`}
+                                                sx={{
+                                                    borderRadius: 2,
+                                                    backgroundColor: "transparent",
+                                                }}
+                                            >
+                                                <Typography component="span">
+                                                    Why should I choose Bluewaves Media? {item}
+                                                </Typography>
+                                            </AccordionSummary>
+                                            <AccordionDetails>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                                                malesuada lacus ex, sit amet blandit leo lobortis eget.
+                                            </AccordionDetails>
+                                        </Accordion>
+                                    </Box>
+                                    {index != 2 && <hr style={{ width: "95%", marginTop: 3, marginBottom: 10 }} />}
+                                </>
+                            ))}
+                        </Box>
+                    </Box>
+
+                    <Box
+                        component="img"
+                        src={whatsappAboutImg}
+                        sx={{
+                            width: "100%",
+                            height: "auto",
+                            maxWidth: "100%",
+                            objectFit: "contain"   // or "cover" if you want it to fill
+                        }}
+                    />
+                </Box>
             </Box>
-            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+            <Box
+                sx={{
+                    background: `url('${whatsappFooter}')`,
+                    height: "52vh",
+                    mt: 8,
+                    backgroundSize: "cover",
+                    p: 5,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-around"
+                }}
+            >
+                <Box sx={{ display: "flex", alignItems: "flex-start", flexDirection: "column", width: "50%" }}>
+                    <Typography variant="h2" sx={{ color: "white", fontWeight: 600 }} gutterBottom>Creative Digital Marketing Agency</Typography>
+                    <Typography variant="body1" sx={{ color: "#4E5156" }}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum beatae sunt quaerat iste dolorem nesciunt ipsa, vitae quibusdam amet deserunt quisquam dicta culpa ea eum fugiat eveniet magnam, excepturi cupiditate.</Typography>
+                    <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", mt: 5, width: "70%" }}>
+                        <Button variant="contained" disableElevation sx={{ borderRadius: 5, backgroundColor: "#4E5156", color: "white", px: 2, py: 1, fontWeight: 500 }}>Contact Us</Button>
+                        <span style={{ color: "white" }}>or</span>
+                        <Typography sx={{ color: "white", fontWeight: 500 }}><Icon icon={"ion:call-sharp"} style={{ color: "#4E5156", marginRight: "10px", width: "25px", height: "20px" }} />+91 8715246912</Typography>
+                    </Box>
+                </Box>
+                <Box component={"img"} src={footerImg} height={"80%"} />
+            </Box>
         </>
     );
 }
