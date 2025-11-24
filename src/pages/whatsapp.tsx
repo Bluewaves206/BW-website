@@ -394,9 +394,9 @@ export default function Whatsapp() {
                     <Typography variant="h2" sx={{ color: "white", fontWeight: 600 }} gutterBottom>Creative Digital Marketing Agency</Typography>
                     <Typography variant="body1" sx={{ color: "#4E5156" }}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum beatae sunt quaerat iste dolorem nesciunt ipsa, vitae quibusdam amet deserunt quisquam dicta culpa ea eum fugiat eveniet magnam, excepturi cupiditate.</Typography>
                     <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", mt: 5, width: "70%" }}>
-                        <Button variant="contained" disableElevation sx={{ borderRadius: 5, backgroundColor: "#4E5156", color: "white", px: 2, py: 1, fontWeight: 500 }}>Contact Us</Button>
+                        <Button variant="contained" sx={{ borderRadius: 5, backgroundColor: "#2DCA72", color: "white", px: 2, py: 1, fontWeight: 500 }}>Contact Us</Button>
                         <span style={{ color: "white" }}>or</span>
-                        <Typography sx={{ color: "white", fontWeight: 500 }}><Icon icon={"ion:call-sharp"} style={{ color: "#4E5156", marginRight: "10px", width: "25px", height: "20px" }} />+91 8715246912</Typography>
+                        <Typography sx={{ color: "white", fontWeight: 500 }}><Icon icon={"ion:call-sharp"} style={{ color: "#2DCA72", marginRight: "10px", width: "25px", height: "20px" }} />+91 8715246912</Typography>
                     </Box>
                 </Box>
                 <Box component={"img"} src={footerImg} height={"80%"} />

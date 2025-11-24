@@ -21,6 +21,11 @@ function ScrollToTop() {
             body.style.setProperty("background-color", "white", "important");
             html.style.setProperty("background-color", "white", "important");
         }
+        else if (pathname === "/Bmail") {
+            root.style.setProperty("background-color", "white", "important");
+            body.style.setProperty("background-color", "white", "important");
+            html.style.setProperty("background-color", "white", "important");
+        }
         else if (pathname === "/sms") {
             root.style.setProperty("background-color", "white", "important");
             body.style.setProperty("background-color", "white", "important");

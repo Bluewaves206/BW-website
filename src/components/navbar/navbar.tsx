@@ -53,7 +53,7 @@ export default function Navbar({ showDropdown, hideDropdown, serviceDrop }: { sh
                 >
                     <NavLink to={'/'} className={({ isActive }) => isActive ? 'navLink active' : 'navLink'}>Home</NavLink >
                     <NavLink to={'/about'} className={({ isActive }) => isActive ? 'navLink active' : 'navLink'}>About Us</NavLink >
-                    <NavLink to={'*'} className={({ isActive }) => isActive ? 'navLink active' : 'navLink'} onMouseEnter={() => showDropdown()} onMouseLeave={() => hideDropdown()}>
+                    <NavLink to={'/whatsapp'} className={({ isActive }) => isActive ? 'navLink active' : 'navLink'} onMouseEnter={() => showDropdown()} onMouseLeave={() => hideDropdown()}>
                         <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
                             Services<Icon icon={'gridicons:dropdown'} />
                         </Box>
