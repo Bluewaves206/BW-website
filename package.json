@@ -20,6 +20,7 @@
     "@fontsource/volkhov": "^5.2.8",
     "@iconify/react": "^6.0.2",
     "@mui/material": "^7.3.4",
+    "framer-motion": "^12.23.25",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.9.3",
