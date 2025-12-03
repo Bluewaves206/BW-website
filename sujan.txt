@@ -2,6 +2,7 @@ DATE: 02/12/2005
 
 -Rebuild the Contact Page.
 -Rebuild the Footer.
+-Create Loader.
 
 ----------------------------------------------------------------------
 
@@ -9,4 +10,9 @@ DATE: 02/12/2005
 -Rebuild the Homepage and Organize All Sections Component-Wise.
 -Create  Call-to-Action Section.
 -Create  FAQ Section.
--Make the Website Responsive.
+-Make this Page Responsive.
+
+-Rebuild the about-page and Organize All Sections Component-Wise.
+-add animation & effects.
+-Make this Page Responsive.
+- and fix multiple css errors.

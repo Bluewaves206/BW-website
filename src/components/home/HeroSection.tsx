@@ -1,4 +1,4 @@
-import { Box, Button, Typography, TextField, Modal } from "@mui/material";
+import { Box, Button, Typography, TextField, Modal, IconButton } from "@mui/material";
 import { Icon } from "@iconify/react";
 import HomeImg from "../../assets/homePageTop.mp4";
 import { useNavigate } from "react-router-dom";
@@ -25,7 +25,6 @@ export default function HeroSection() {
     const [success, setSuccess] = useState(false);
     const [open, setOpen] = useState(false);
 
-    // FORM HANDLERS -----------------------
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setForm({ ...form, [e.target.name]: e.target.value });
         setErrors({ ...errors, [e.target.name]: "" });
@@ -35,10 +34,11 @@ export default function HeroSection() {
         const temp: ErrorState = {};
         if (!form.email) temp.email = "Email required";
         else if (!/\S+@\S+\.\S+/.test(form.email)) temp.email = "Email is invalid";
-        
+
         if (!form.phone) temp.phone = "Phone required";
-        else if (!/^\d{10}$/.test(form.phone.replace(/\D/g, ''))) temp.phone = "Phone must be 10 digits";
-        
+        else if (!/^\d{10}$/.test(form.phone.replace(/\D/g, "")))
+            temp.phone = "Phone must be 10 digits";
+
         if (!form.date) temp.date = "Select a date";
         setErrors(temp);
         return Object.keys(temp).length === 0;
@@ -56,12 +56,20 @@ export default function HeroSection() {
             setTimeout(() => {
                 setSuccess(false);
                 setOpen(false);
-            }, 1500);
+            }, 1200);
         }, 1200);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+        setSuccess(false);
+        setLoading(false);
+        setErrors({});
     };
 
     return (
         <Box sx={{ position: "relative", overflow: "hidden" }}>
+
             {/* BACKGROUND VIDEO */}
             <Box
                 component="video"
@@ -81,7 +89,7 @@ export default function HeroSection() {
                 }}
             />
 
-            {/* OVERLAY FOR BETTER TEXT READABILITY */}
+            {/* DARK OVERLAY */}
             <Box
                 sx={{
                     position: "absolute",
@@ -89,7 +97,7 @@ export default function HeroSection() {
                     left: 0,
                     width: "100%",
                     height: { xs: "480px", sm: "550px", md: "700px", lg: "750px" },
-                    background: "linear-gradient(90deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 100%)",
+                    background: "linear-gradient(90deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.22) 100%)",
                     zIndex: 1,
                 }}
             />
@@ -108,69 +116,64 @@ export default function HeroSection() {
                     mx: "auto",
                 }}
             >
-                <Box sx={{ 
-                    width: { 
-                        xs: "100%", 
-                        sm: "100%", 
-                        md: "80%", 
-                        lg: "65%", 
-                        xl: "55%" 
-                    },
-                    pr: { md: 2 }
-                }}>
-                    {/* HEADING */}
+                <Box
+                    sx={{
+                        width: {
+                            xs: "100%",
+                            sm: "100%",
+                            md: "80%",
+                            lg: "65%",
+                            xl: "55%",
+                        },
+                        pr: { md: 2 },
+                    }}
+                >
+
+                    {/* HEADINGS */}
                     <Typography
                         component="div"
                         sx={{
                             color: "white",
                             fontWeight: 700,
                             lineHeight: { xs: 1.15, sm: 1.2, md: 1.3 },
-                            fontSize: { 
-                                xs: "1.8rem", 
-                                sm: "2.3rem", 
-                                md: "2.8rem", 
+                            fontSize: {
+                                xs: "1.8rem",
+                                sm: "2.3rem",
+                                md: "2.8rem",
                                 lg: "3.2rem",
-                                xl: "3.5rem" 
+                                xl: "3.5rem",
                             },
                             display: "flex",
                             flexDirection: "column",
                             gap: { xs: 0.8, sm: 1 },
-                            mb: { xs: 2, sm: 2.5, md: 3 }
+                            mb: { xs: 2, sm: 2.5, md: 3 },
                         }}
                     >
-                        <Box sx={{ 
-                            background: "#F4F9FD", 
-                            color: "#3F8CFF", 
-                            px: { xs: 1.2, sm: 1.5, md: 1.8 }, 
-                            py: { xs: 0.6, sm: 0.8, md: 1 }, 
-                            borderRadius: "10px", 
-                            width: "fit-content",
-                            fontSize: "inherit",
-                            fontWeight: "inherit",
-                            lineHeight: "inherit"
-                        }}>
+                        <Box
+                            sx={{
+                                background: "#F4F9FD",
+                                color: "#3F8CFF",
+                                px: { xs: 1.2, sm: 1.5, md: 1.8 },
+                                py: { xs: 0.6, sm: 0.8, md: 1 },
+                                borderRadius: "10px",
+                                width: "fit-content",
+                            }}
+                        >
                             The Future of
                         </Box>
 
-                        <Box sx={{ 
-                            display: "inline",
-                            mr: 1
-                        }}>
-                            Communication. The
-                        </Box>
+                        <Box>Communication. The</Box>
 
-                        <Box sx={{ 
-                            background: "#F4F9FD", 
-                            color: "#4E5156", 
-                            px: { xs: 1.2, sm: 1.5, md: 1.8 }, 
-                            py: { xs: 0.6, sm: 0.8, md: 1 }, 
-                            borderRadius: "10px", 
-                            width: "fit-content",
-                            fontSize: "inherit",
-                            fontWeight: "inherit",
-                            lineHeight: "inherit",
-                            mt: { xs: 0.5, sm: 0 }
-                        }}>
+                        <Box
+                            sx={{
+                                background: "#F4F9FD",
+                                color: "#4E5156",
+                                px: { xs: 1.2, sm: 1.5, md: 1.8 },
+                                py: { xs: 0.6, sm: 0.8, md: 1 },
+                                borderRadius: "10px",
+                                width: "fit-content",
+                            }}
+                        >
                             Force Behind Growth.
                         </Box>
                     </Typography>
@@ -180,74 +183,44 @@ export default function HeroSection() {
                         sx={{
                             color: "#fff",
                             lineHeight: { xs: 1.5, sm: 1.6, md: 1.65 },
-                            fontSize: { 
-                                xs: "0.875rem", 
-                                sm: "0.95rem", 
-                                md: "1.05rem", 
-                                lg: "1.15rem" 
+                            fontSize: {
+                                xs: "0.875rem",
+                                sm: "0.95rem",
+                                md: "1.05rem",
+                                lg: "1.15rem",
                             },
                             mb: { xs: 3, sm: 4, md: 4.5 },
                             pr: { md: 4, lg: 8 },
-                            maxWidth: { md: "90%", lg: "85%" }
+                            maxWidth: { md: "90%", lg: "85%" },
                         }}
                     >
-                        “We enhance businesses' ability to boost customer engagement through
-                        personalized and interactive video experiences.”
+                        "We enhance businesses' ability to boost customer engagement
+                        through personalized and interactive video experiences."
                     </Typography>
 
-                    {/* BUTTON ROW */}
+                    {/* BUTTONS */}
                     <Box
                         sx={{
                             display: "flex",
                             flexDirection: { xs: "column", sm: "row" },
                             gap: { xs: 2, sm: 2, md: 3 },
-                            alignItems: { xs: "stretch", sm: "center" },
-                            flexWrap: "wrap"
                         }}
                     >
-                        {/* READ MORE */}
                         <Button
                             variant="contained"
                             onClick={() => navigate("/about")}
                             sx={{
                                 bgcolor: "#3F8CFF",
                                 color: "#fff",
-                                textTransform: "none",
                                 borderRadius: "30px",
-                                px: { xs: 2.5, sm: 3, md: 3.5 },
-                                py: { xs: 1, sm: 1.2, md: 1.4 },
-                                fontSize: { xs: "0.875rem", sm: "0.95rem", md: "1rem" },
+                                px: { xs: 2.5, sm: 3 },
+                                py: { xs: 1, sm: 1.2 },
                                 fontWeight: 600,
-                                minWidth: { xs: "100%", sm: "auto" },
-                                width: { xs: "100%", sm: "auto" },
-                                "&:hover": { 
-                                    bgcolor: "#3575D9",
-                                    transform: "translateY(-2px)",
-                                    transition: "transform 0.2s"
-                                },
-                                transition: "all 0.2s"
                             }}
-                            endIcon={
-                                <Box
-                                    sx={{
-                                        border: "2px solid #fff",
-                                        borderRadius: "50%",
-                                        width: { xs: 26, sm: 30, md: 34 },
-                                        height: { xs: 26, sm: 30, md: 34 },
-                                        display: "flex",
-                                        alignItems: "center",
-                                        justifyContent: "center",
-                                        ml: 0.5
-                                    }}
-                                >
-                                    <Icon icon="formkit:arrowright" width={14} color="#fff" />
-                                </Box>
-                            }
                         >
                             Read More
                         </Button>
 
-                        {/* BOOK DEMO */}
                         <Button
                             variant="outlined"
                             onClick={() => setOpen(true)}
@@ -255,27 +228,11 @@ export default function HeroSection() {
                                 borderRadius: "30px",
                                 borderColor: "#fff",
                                 color: "#fff",
-                                px: { xs: 2.5, sm: 3, md: 3.5 },
-                                py: { xs: 1, sm: 1.2, md: 1.4 },
-                                fontSize: { xs: "0.875rem", sm: "0.95rem", md: "1rem" },
+                                px: { xs: 2.5, sm: 3 },
+                                py: { xs: 1, sm: 1.2 },
                                 fontWeight: 600,
-                                minWidth: { xs: "100%", sm: "auto" },
-                                width: { xs: "100%", sm: "auto" },
-                                "&:hover": {
-                                    borderColor: "#3F8CFF",
-                                    backgroundColor: "rgba(63, 140, 255, 0.1)",
-                                    transform: "translateY(-2px)",
-                                    transition: "transform 0.2s"
-                                },
-                                transition: "all 0.2s"
                             }}
-                            startIcon={
-                                <Icon 
-                                    icon="mdi:calendar-clock" 
-                                    width={18} 
-                                    style={{ marginRight: "8px" }} 
-                                />
-                            }
+                            startIcon={<Icon icon="mdi:calendar-clock" width={18} />}
                         >
                             Book Demo
                         </Button>
@@ -283,70 +240,125 @@ export default function HeroSection() {
                 </Box>
             </Box>
 
-            {/* POPUP FORM */}
-            <Modal 
-                open={open} 
-                onClose={() => setOpen(false)}
+            
+            <Modal
+                open={open}
+                onClose={handleClose}
                 sx={{
                     display: "flex",
                     alignItems: { xs: "flex-start", sm: "center" },
                     justifyContent: "center",
-                    overflow: "auto",
-                    py: { xs: 2, sm: 0 }
+                    py: { xs: 2, sm: 0 },
+
+                    /*  BRIGHT CLEAN GLASS BACKDROP */
+                    backdropFilter: "blur(18px)",
+                    WebkitBackdropFilter: "blur(18px)",
+
+                    backgroundColor: "rgba(255,255,255,0.25)", // light & clean
                 }}
             >
                 <Box
                     sx={{
-                        width: { 
-                            xs: "calc(100% - 32px)", 
-                            sm: "420px", 
-                            md: "450px" 
-                        },
-                        maxWidth: "95vw",
-                        background: "#fff",
-                        borderRadius: "18px",
+                        width: { xs: "calc(100% - 32px)", sm: "420px", md: "450px" },
+
+                        /*  PURE BRIGHT GLASSMORPHISM */
+                        background: "rgba(255,255,255,0.40)",
+                        backdropFilter: "blur(22px)",
+                        WebkitBackdropFilter: "blur(22px)",
+
+                        borderRadius: "20px",
+                        border: "1px solid rgba(255,255,255,0.45)",
+                        boxShadow:
+                            "0 12px 35px rgba(0,0,0,0.12)", // soft shadow, not dark
                         p: { xs: 3, sm: 4 },
-                        mx: "auto",
-                        my: { xs: "auto", sm: "auto" },
-                        boxShadow: "0 20px 60px rgba(0,0,0,0.3)",
-                        maxHeight: { xs: "90vh", sm: "auto" },
-                        overflow: "auto"
+
+                        position: "relative",
+
+                        transition: "all 0.3s ease",
+                        animation: "popupScale 0.35s ease-out",
+
+                        "&::before": {
+                            content: '""',
+                            position: "absolute",
+                            inset: 0,
+                            borderRadius: "20px",
+                            background:
+                                "linear-gradient(145deg, rgba(255,255,255,0.5), rgba(255,255,255,0.1))",
+                            pointerEvents: "none",
+                        },
                     }}
                 >
-                    <Typography 
-                        sx={{ 
-                            fontSize: { xs: "1.2rem", sm: "1.4rem" }, 
-                            fontWeight: 700, 
+
+                    {/* CLOSE BUTTON */}
+                    <IconButton
+                        onClick={handleClose}
+                        sx={{
+                            position: "absolute",
+                            top: 16,
+                            right: 16,
+                            width: 36,
+                            height: 36,
+                            borderRadius: "50%",
+                            background: "rgba(255,255,255,0.35)",
+                            backdropFilter: "blur(8px)",
+                            border: "1px solid rgba(255,255,255,0.5)",
+                            "&:hover": {
+                                background: "rgba(255,255,255,0.55)",
+                                transform: "scale(1.08)",
+                                transition: "0.25s",
+                            },
+                        }}
+                    >
+                        <Icon icon="material-symbols:close" width={20} />
+                    </IconButton>
+
+                    {/* TITLE */}
+                    <Typography
+                        sx={{
+                            fontSize: "1.5rem",
+                            fontWeight: 700,
                             mb: 3,
-                            textAlign: "center"
+                            textAlign: "center",
+                            color: "#1f2937",
                         }}
                     >
                         Book Your Demo
                     </Typography>
 
-                    <Box sx={{ display: "grid", gap: 2.5 }}>
+                    {/* FORM */}
+                    <Box sx={{ display: "grid", gap: 2 }}>
                         <TextField
                             label="Email Address"
                             name="email"
-                            type="email"
                             value={form.email}
                             onChange={handleChange}
                             error={!!errors.email}
                             helperText={errors.email}
                             fullWidth
-                            size="medium"
+                            sx={{
+                                "& .MuiOutlinedInput-root": {
+                                    borderRadius: "12px",
+                                    background: "rgba(255,255,255,0.55)",
+                                    backdropFilter: "blur(12px)",
+                                },
+                            }}
                         />
 
                         <TextField
                             label="Phone Number"
                             name="phone"
-                            type="tel"
                             value={form.phone}
                             onChange={handleChange}
                             error={!!errors.phone}
                             helperText={errors.phone}
                             fullWidth
-                            size="medium"
+                            sx={{
+                                "& .MuiOutlinedInput-root": {
+                                    borderRadius: "12px",
+                                    background: "rgba(255,255,255,0.55)",
+                                    backdropFilter: "blur(12px)",
+                                },
+                            }}
                         />
 
                         <TextField
@@ -358,31 +370,65 @@ export default function HeroSection() {
                             helperText={errors.date}
                             InputLabelProps={{ shrink: true }}
                             fullWidth
-                            size="medium"
+                            sx={{
+                                "& .MuiOutlinedInput-root": {
+                                    borderRadius: "12px",
+                                    background: "rgba(255,255,255,0.55)",
+                                    backdropFilter: "blur(12px)",
+                                },
+                            }}
                         />
 
                         <Button
                             variant="contained"
                             onClick={handleSubmit}
-                            disabled={loading}
-                            sx={{
-                                background: success ? "#22C55E" : "#3F8CFF",
-                                py: 1.5,
-                                borderRadius: "10px",
-                                fontWeight: 600,
-                                fontSize: "1rem",
-                                mt: 1,
-                                "&:hover": {
-                                    background: success ? "#16a34a" : "#3575D9"
-                                }
-                            }}
+                            disabled={loading || success}
                             fullWidth
+                            sx={{
+                                background: success
+                                    ? "#22C55E"
+                                    : "linear-gradient(90deg,#60A5FA,#3B82F6)",
+                                color: "#fff",
+                                py: 1.3,
+                                borderRadius: "12px",
+                                fontWeight: 700,
+                                fontSize: "1rem",
+                                "&:hover": {
+                                    transform: "translateY(-2px)",
+                                    boxShadow: "0 10px 20px rgba(59,130,246,0.28)",
+                                },
+                                transition: "all 0.25s ease",
+                            }}
                         >
-                            {loading ? "Booking..." : success ? "Success! Redirecting..." : "Submit"}
+                            {loading
+                                ? "Booking..."
+                                : success
+                                ? "Success!"
+                                : "Submit Request"}
                         </Button>
                     </Box>
+
+                    {success && (
+                        <Typography
+                            sx={{
+                                mt: 2,
+                                textAlign: "center",
+                                color: "#22C55E",
+                                fontWeight: 700,
+                            }}
+                        >
+                            Thank you! We'll contact you shortly.
+                        </Typography>
+                    )}
                 </Box>
             </Modal>
+
+            <style>{`
+                @keyframes popupScale {
+                    0% { opacity: 0; transform: scale(0.85); }
+                    100% { opacity: 1; transform: scale(1); }
+                }
+            `}</style>
         </Box>
     );
 }

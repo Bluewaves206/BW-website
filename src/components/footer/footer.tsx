@@ -18,7 +18,6 @@ const Footer = () => {
         color: "#0F1011",
         fontSize: { xs: "10px", sm: "12px", md: "16px" },
         transition: "color 0.25s ease",
-        "&:active": { color: "#7e7e7e" },
         "&:hover": { color: "#555" },
     };
 
@@ -35,6 +34,7 @@ const Footer = () => {
                 width: "100%",
             }}
         >
+
             {/* LEFT SIDE */}
             <Box
                 sx={{
@@ -42,25 +42,21 @@ const Footer = () => {
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "flex-start",
-                    height: "100%",
                 }}
             >
                 {/* Tagline */}
                 <Typography
-                    variant="h4"
                     sx={{
-                        fontFamily: "Archivo, sans-serif",
+                        fontFamily: "Archivo",
                         fontWeight: 500,
-                        color: "#0F1011",
                         fontSize: { xs: "14px", sm: "22px", md: "32px" },
-                        lineHeight: 1.3,
                     }}
                 >
                     “You focus on success, we handle your digital
                     <Typography
                         component="span"
                         sx={{
-                            fontFamily: "Archivo, sans-serif",
+                            fontFamily: "Archivo",
                             fontWeight: 500,
                             ml: 1,
                             fontSize: { xs: "15px", sm: "25px", md: "35px" },
@@ -82,59 +78,35 @@ const Footer = () => {
 
                 {/* MENU LINKS */}
                 <Box sx={{ width: "100%" }}>
-
                     <Box
                         sx={{
                             my: 1,
                             display: "flex",
-                            flexDirection: "row",
-                            alignItems: "center",
-                            columnGap: 1,
-                            flexWrap: { xs: "nowrap", md: "wrap" },     // ⭐ MOBILE: NO WRAP
-                            whiteSpace: "nowrap",                       // ⭐ FORCE SINGLE ROW
-                            overflowX: { xs: "auto", md: "visible" },   // ⭐ SCROLL IF NEEDED
-                            pb: 1,                                      // ⭐ SMALL GAP BELOW
-                            mb: 2                                       // ⭐ GAP BEFORE NEXT SECTION
+                            gap: 1,
+                            whiteSpace: "nowrap",
+                            overflowX: "auto",
+                            pb: 1,
+                            mb: 2
                         }}
                     >
-                        <Link to="/" style={linkStyle}>
-                            <Typography sx={linkText}>Home</Typography>
-                        </Link>
+                        <Link to="/" style={linkStyle}><Typography sx={linkText}>Home</Typography></Link>
                         <span>/</span>
 
-                        <Link to="/about" style={linkStyle}>
-                            <Typography sx={linkText}>About Us</Typography>
-                        </Link>
+                        <Link to="/about" style={linkStyle}><Typography sx={linkText}>About Us</Typography></Link>
                         <span>/</span>
 
-                        <Link to="/services" style={linkStyle}>
-                            <Typography sx={linkText}>Services</Typography>
-                        </Link>
+                        <Link to="/services" style={linkStyle}><Typography sx={linkText}>Services</Typography></Link>
                         <span>/</span>
 
-                        <Link to="/blogs" style={linkStyle}>
-                            <Typography sx={linkText}>Blogs</Typography>
-                        </Link>
+                        <Link to="/blogs" style={linkStyle}><Typography sx={linkText}>Blogs</Typography></Link>
                         <span>/</span>
 
-                        <Link to="/contact" style={linkStyle}>
-                            <Typography sx={linkText}>Contacts</Typography>
-                        </Link>
+                        <Link to="/contact" style={linkStyle}><Typography sx={linkText}>Contacts</Typography></Link>
                     </Box>
-
                 </Box>
 
-
                 {/* SOCIAL ICONS */}
-                <Box
-                    sx={{
-                        mt: "auto",
-                        gap: 3,
-                        display: "flex",
-                        flexDirection: "row",
-                        width: "100%",
-                    }}
-                >
+                <Box sx={{ mt: "auto", gap: 3, display: "flex", flexDirection: "row" }}>
                     {[
                         "mdi:facebook",
                         "fa6-brands:x-twitter",
@@ -144,214 +116,181 @@ const Footer = () => {
                         <Box
                             key={icon}
                             sx={{
-                                width: { xs: 22, sm: 24, md: 30 },
-                                height: { xs: 22, sm: 24, md: 30 },
+                                width: { xs: 22, md: 30 },
+                                height: { xs: 22, md: 30 },
                                 cursor: "pointer",
-                                transition: "transform 0.2s ease",
                                 "&:hover": { transform: "scale(1.15)" },
-                                "&:active": { opacity: 0.6 },
+                                transition: "0.2s",
                             }}
                         >
-                            <Icon
-                                icon={icon}
-                                color="#0F1011"
-                                width="100%"
-                                height="100%"
-                            />
+                            <Icon icon={icon} color="#0F1011" width="100%" height="100%" />
                         </Box>
                     ))}
                 </Box>
             </Box>
 
-            {/* RIGHT SIDE */}
+            {/* RIGHT SIDE — SAME ALIGNMENT AS DESKTOP */}
             <Box
                 sx={{
                     width: { xs: "100%", md: "50%" },
                     display: "flex",
                     flexDirection: "column",
-                    height: "100%",
                     gap: 2,
                 }}
             >
-                <Box
-                    sx={{
-                        width: "100%",
-                        borderBottom: "1.5px solid #858484",
-                    }}
-                />
+                <Box sx={{ width: "100%", borderBottom: "1.5px solid #858484" }} />
 
-                {/* CONTACTS + BUTTON + LOGO (responsive) */}
+                {/* EXACT DESKTOP ALIGNMENT */}
                 <Box
                     sx={{
                         display: "flex",
-                        flexDirection: { xs: "column", sm: "row" },
+                        flexDirection: "row",       // ALWAYS ROW LIKE DESKTOP
+                        alignItems: "flex-start",
                         justifyContent: "space-between",
                         width: "100%",
-                        gap: { xs: 2, sm: 1 },
+                        gap: 2,
                     }}
                 >
-                    {/* CONTACT HEADING + BUTTON TOGETHER ON MOBILE */}
+
+                    {/* OUR CONTACTS SECTION */}
                     <Box
                         sx={{
-                            width: { xs: "100%", sm: "33%" },
                             display: "flex",
-                            flexDirection: { xs: "row", md: "column" },
-                            alignItems: { xs: "center", md: "flex-start" },
-                            justifyContent: { xs: "flex-start", md: "flex-start" },
-                            gap: { xs: "4px", md: 0.3 },   // ⭐ FIXED GAP FOR MOBILE
+                            flexDirection: "column",
+                            alignItems: "flex-start",
+                            gap: 1,
+                            width: "33%",
                         }}
                     >
-                        {/* Heading */}
-                        <Box>
-                            <Typography
-                                sx={{
-                                    fontFamily: "Archivo, sans-serif",
-                                    fontWeight: 600,
-                                    fontSize: { xs: "1.2rem", md: "2rem", lg: "2.5rem" },
-                                }}
-                            >
-                                Our
-                            </Typography>
-                            <Typography
-                                sx={{
-                                    fontFamily: "Archivo, sans-serif",
-                                    fontWeight: 600,
-                                    fontSize: { xs: "1.2rem", md: "2rem", lg: "2.5rem" },
-                                    color: "#8F9096",
-                                }}
-                            >
-                                Contacts.
-                            </Typography>
-                        </Box>
+                        <Typography
+                            sx={{
+                                fontFamily: "Archivo",
+                                fontWeight: 600,
+                                fontSize: { xs: "1.2rem", md: "2rem" },
+                            }}
+                        >
+                            Our
+                        </Typography>
 
-                        {/* ROUND BUTTON */}
+                        <Typography
+                            sx={{
+                                fontFamily: "Archivo",
+                                fontWeight: 600,
+                                fontSize: { xs: "1.2rem", md: "2rem" },
+                                color: "#8F9096",
+                            }}
+                        >
+                            Contacts.
+                        </Typography>
+
+                        {/* BUTTON — SMALLER IN MOBILE */}
                         <Link to="/contact" style={{ textDecoration: "none" }}>
                             <Button
                                 variant="contained"
                                 sx={{
-                                    width: { xs: 48, sm: 50, md: 60 },   // ⭐ mobile view bigger button
-                                    height: { xs: 48, sm: 50, md: 60 },  // ⭐ mobile view bigger button
-                                    minWidth: 0,
+                                    width: { xs: 36, sm: 42, md: 60 },
+                                    height: { xs: 36, sm: 42, md: 60 },
                                     borderRadius: "50%",
-                                    display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "center",
+                                    minWidth: 0,
+                                    p: 0,
                                 }}
                             >
                                 <Icon
                                     icon="solar:arrow-right-up-linear"
-                                    width={isMobile ? 30 : 25}     // ⭐ MOBILE → 30px icon, DESKTOP → 25px
-                                    height={isMobile ? 30 : 25}
-                                    color="#FFFFFF"
+                                    width={isMobile ? 20 : 25}
+                                    height={isMobile ? 20 : 25}
+                                    color="#fff"
                                 />
                             </Button>
-
                         </Link>
                     </Box>
 
-
-                    {/* Phone + Email */}
+                    {/* CONTACT DETAILS */}
                     <Box
                         sx={{
-                            width: { xs: "100%", sm: "40%", md: "33%" },
+                            width: "33%",
                             display: "flex",
                             flexDirection: "column",
                             gap: 1,
                         }}
                     >
-                        <Typography component="a" href="tel:+918777247832"
+                        <Typography
+                            component="a"
+                            href="tel:+918777247832"
                             sx={{
                                 fontFamily: "Outfit",
-                                fontWeight: 400,
                                 textDecoration: "none",
                                 fontSize: { xs: "13px", md: "17px" },
                                 color: "#0F1011",
-                                "&:hover": { color: "#555" },
                             }}
                         >
-                            +91 8777247832 
+                            +91 8777247832
                         </Typography>
 
-                        <Typography component="a" href="tel:+918276882339 "
+                        <Typography
+                            component="a"
+                            href="tel:+918276882339"
                             sx={{
                                 fontFamily: "Outfit",
-                                fontWeight: 400,
                                 textDecoration: "none",
                                 fontSize: { xs: "13px", md: "17px" },
                                 color: "#0F1011",
-                                "&:hover": { color: "#555" },
                             }}
                         >
                             +918276882339
                         </Typography>
 
-                        <Typography component="a" href="mailto:sales@bluewavesmedia.in"
+                        <Typography
+                            component="a"
+                            href="mailto:sales@bluewavesmedia.in"
                             sx={{
                                 fontFamily: "Outfit",
-                                fontWeight: 400,
                                 textDecoration: "none",
                                 fontSize: { xs: "13px", md: "17px" },
                                 color: "#0F1011",
-                                "&:hover": { color: "#555" },
                             }}
                         >
                             sales@bluewavesmedia.in
                         </Typography>
                     </Box>
 
-                    {/* LOGO */}
+                    {/* LOGO — SMALLER IN MOBILE */}
                     <Box
                         component="img"
                         src={bluewaves}
                         alt="logo"
                         sx={{
-                            width: { xs: "40%", sm: "30%", md: "33%" },
+                            width: { xs: "26%", sm: "30%", md: "33%" },
+                            maxWidth: "110px",
                             objectFit: "contain",
-                            alignSelf: { xs: "flex-start", sm: "center" },
                         }}
                     />
                 </Box>
 
-                {/* BOTTOM FOOTER */}
+                {/* BOTTOM SECTION */}
                 <Box
                     sx={{
                         display: "flex",
                         flexDirection: { xs: "column", sm: "row" },
-                        alignItems: "center",
                         justifyContent: "space-between",
-                        gap: { xs: 1, sm: 0 },
+                        alignItems: "center",
                         width: "100%",
                         mt: "auto",
+                        gap: 1,
                     }}
                 >
-                    {/* Copyright */}
                     <Typography
                         sx={{
-                            fontFamily: "Archivo, sans-serif",
-                            fontWeight: 400,
+                            fontFamily: "Archivo",
                             fontSize: { xs: "10px", md: "12px" },
-                            textAlign: "center",
-                            width: "100%",
                         }}
                     >
                         © {new Date().getFullYear()} Bluewaves Media. All rights reserved.
                     </Typography>
 
-                    <Box
-                        sx={{
-                            display: "flex",
-                            gap: 3,
-                            justifyContent: "center",
-                            width: "100%",
-                        }}
-                    >
-                        <Link to="/privacy" style={linkStyle}>
-                            <Typography sx={linkText}>Privacy</Typography>
-                        </Link>
-
-                        <Link to="/disclaimer" style={linkStyle}>
-                            <Typography sx={linkText}>Disclaimer</Typography>
-                        </Link>
+                    <Box sx={{ display: "flex", gap: 3 }}>
+                        <Link to="/privacy" style={linkStyle}><Typography sx={linkText}>Privacy</Typography></Link>
+                        <Link to="/disclaimer" style={linkStyle}><Typography sx={linkText}>Disclaimer</Typography></Link>
                     </Box>
                 </Box>
             </Box>
