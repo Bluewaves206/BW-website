@@ -1,0 +1,12 @@
+DATE: 02/12/2005
+
+-Rebuild the Contact Page.
+-Rebuild the Footer.
+
+----------------------------------------------------------------------
+
+DATE: 02/12/2005
+-Rebuild the Homepage and Organize All Sections Component-Wise.
+-Create  Call-to-Action Section.
+-Create  FAQ Section.
+-Make the Website Responsive.

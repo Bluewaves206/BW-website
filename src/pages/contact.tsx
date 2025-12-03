@@ -492,115 +492,112 @@ export default function Contact() {
     </Box>
 
     {/* FAQ CARDS WITH SMOOTH ANIMATION */}
-    <Box
-        sx={{
-            width: "100%",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            gap: 3,
-            px: { xs: 1, sm: 2 },
-        }}
-    >
-        {[1, 2, 3, 4, 5, 6].map((item) => (
-            <Box 
-                key={item}
+<Box
+    sx={{
+        width: "100%",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        gap: 2,
+        px: { xs: 1, sm: 2 },
+    }}
+>
+    {[1, 2, 3, 4, 5, 6].map((item) => (
+        <Box 
+            key={item}
+            sx={{
+                width: { xs: "100%", sm: "90%", md: "80%", lg: "70%" },
+                maxWidth: "800px",
+                mx: "auto",
+            }}
+        >
+            <Box
                 sx={{
-                    width: { xs: "100%", sm: "90%", md: "80%", lg: "70%" }, 
-                    maxWidth: "800px",
-                    mx: "auto",
+                    backgroundColor: "transparent",        // footer style (no bg)
+                    borderRadius: 2,
+                    overflow: "hidden",
+                    border: "1px solid #E5E7EB",
                     transition: "all 0.3s ease",
+                    "&:hover": {
+                        borderColor: "#3F8CFF",
+                    },
                 }}
             >
+                {/* Header */}
                 <Box
+                    onClick={() => setExpanded(expanded === item ? false : item)}
                     sx={{
-                        backgroundColor: expanded === item ? "#FFFFFF" : "#F8FAFC",
-                        borderRadius: 3,
-                        overflow: "hidden",
-                        boxShadow: expanded === item 
-                            ? "0 10px 40px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.03)"
-                            : "0 4px 20px rgba(0,0,0,0.05)",
-                        border: "1px solid",
-                        borderColor: expanded === item ? "#E5E7EB" : "transparent",
-                        transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-                        "&:hover": {
-                            boxShadow: "0 6px 24px rgba(0,0,0,0.08)",
-                            borderColor: "#D1D5DB",
-                        },
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "space-between",
+                        p: { xs: 2.5, sm: 3 },
+                        cursor: "pointer",
+                        userSelect: "none",
                     }}
                 >
+                    <Typography 
+                        sx={{ 
+                            fontWeight: 600, 
+                            fontSize: { xs: "1rem", sm: "1.1rem" },
+                            color: "#111827",
+                            flex: 1,
+                            pr: 2,
+                        }}
+                    >
+                        Why should I choose Bluewaves Media? {item}
+                    </Typography>
+
+                    {/* Round Icon */}
                     <Box
-                        onClick={() => setExpanded(expanded === item ? false : item)}
                         sx={{
                             display: "flex",
                             alignItems: "center",
-                            justifyContent: "space-between",
-                            p: { xs: 3, sm: 3.5 },
-                            cursor: "pointer",
-                            userSelect: "none",
+                            justifyContent: "center",
+                            backgroundColor: "#F3F4F6",
+                            borderRadius: "50%",
+                            width: { xs: 30, sm: 34 },
+                            height: { xs: 30, sm: 34 },
+                            transition: "all 0.4s ease",
                         }}
                     >
-                        <Typography 
-                            sx={{ 
-                                fontWeight: 700, 
-                                fontSize: { xs: "1rem", sm: "1.1rem", md: "1.2rem" },
-                                color: "#111827",
-                                flex: 1,
-                                pr: 2,
+                        <Icon
+                            icon={expanded === item ? "mdi:minus" : "mdi:plus"}
+                            style={{
+                                fontSize: "1.3rem",
+                                color: "#3F8CFF",
+                                transition: "0.3s",
                             }}
-                        >
-                            Why should I choose Bluewaves Media? {item}
-                        </Typography>
-                        
-                        <Box
-                            sx={{
-                                display: "flex",
-                                alignItems: "center",
-                                justifyContent: "center",
-                                backgroundColor: expanded === item ? "#3F8CFF" : "#E5E7EB",
-                                borderRadius: "50%",
-                                width: { xs: 32, sm: 36 },
-                                height: { xs: 32, sm: 36 },
-                                transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-                                transform: expanded === item ? "rotate(180deg)" : "rotate(0deg)",
-                            }}
-                        >
-                            <Icon 
-                                icon="mdi:chevron-down" 
-                                style={{ 
-                                    fontSize: "1.5rem", 
-                                    color: expanded === item ? "#FFFFFF" : "#6B7280" 
-                                }} 
-                            />
-                        </Box>
+                        />
                     </Box>
+                </Box>
 
-                    {/* Animated Content */}
+                {/* Content */}
+                <Box
+                    sx={{
+                        overflow: "hidden",
+                        maxHeight: expanded === item ? "400px" : "0px",
+                        transition: "max-height 0.4s ease",
+                    }}
+                >
                     <Box
                         sx={{
-                            overflow: "hidden",
-                            maxHeight: expanded === item ? "500px" : "0px",
-                            transition: "max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+                            px: { xs: 2.5, sm: 3 },
+                            pb: { xs: 2.5, sm: 3 },
+                            color: "#6B7280",
+                            lineHeight: 1.6,
+                            fontSize: { xs: "0.95rem", sm: "1rem" },
+                            borderTop: "1px solid #E5E7EB",
                         }}
                     >
-                        <Box
-                            sx={{
-                                p: { xs: 3, sm: 3.5 },
-                                pt: 0,
-                                color: "#6B7280",
-                                lineHeight: 1.6,
-                                fontSize: { xs: "0.95rem", sm: "1rem" },
-                                borderTop: "1px solid #F3F4F6",
-                            }}
-                        >
-                            We provide modern, reliable solutions designed to help your business grow. Our team focuses on quality, speed, and creating the results you need to succeed.
-                        </Box>
+                        We provide modern, reliable solutions designed to help your business grow. 
+                        Our team focuses on quality, speed, and the results you need to succeed.
                     </Box>
                 </Box>
             </Box>
-        ))}
-    </Box>
+        </Box>
+    ))}
 </Box>
-</>
+            </Box>
+        </>
     )
 }
