@@ -1,10 +1,10 @@
 import { Box, Typography } from "@mui/material";
 import { Icon } from "@iconify/react";
-import { useState, useRef } from "react";
+import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function ServicesSection() {
     const [active, setActive] = useState<number | null>(null);
-    const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
     const services = [
         {
@@ -45,18 +45,10 @@ export default function ServicesSection() {
         },
     ];
 
-    // Start hold timer
-    const startHold = (index: number) => {
-        timer.current = setTimeout(() => setActive(index), 500);
-    };
+    const isMobile = () => window.innerWidth < 768;
 
-    const stopHold = () => {
-        if (timer.current) clearTimeout(timer.current);
-    };
-
-    const handleTap = (index: number) => {
-        setActive(active === index ? null : index);
-    };
+    const getActiveState = (index: number) =>
+        isMobile() ? active === index : active === index;
 
     return (
         <Box
@@ -102,87 +94,120 @@ export default function ServicesSection() {
                 }}
             >
                 {services.map((service, index) => {
-                    const isOpen = active === index;
+                    const isOpen = getActiveState(index);
 
                     return (
-                        <Box
+                        <motion.div
                             key={index}
-                            onMouseEnter={() => setActive(index)}
-                            onMouseLeave={() => setActive(null)}
-                            onTouchStart={() => startHold(index)}
-                            onTouchEnd={() => {
-                                stopHold();
-                                handleTap(index);
-                            }}
-                            sx={{
-                                p: 3,
-                                background: "#fff",
-                                borderRadius: "18px",
-                                boxShadow: "0 4px 15px rgba(0,0,0,0.08)",
-                                transition: "0.4s ease",
-                                cursor: "pointer",
-                                "&:hover": {
-                                    boxShadow: "0 12px 28px rgba(0,0,0,0.15)",
-                                    transform: "translateY(-6px)",
-                                },
-                            }}
+                            onMouseEnter={() => !isMobile() && setActive(index)}
+                            onMouseLeave={() => !isMobile() && setActive(null)}
+                            onClick={() =>
+                                isMobile()
+                                    ? setActive(isOpen ? null : index)
+                                    : setActive(index)
+                            }
+                            initial={{ opacity: 0, x: -50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: index * 0.15 }}
+                            style={{ cursor: "pointer", position: "relative" }}
                         >
-                            {/* ICON + TITLE */}
-                            <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-                                <Box
-                                    sx={{
-                                        background: "linear-gradient(135deg,#3BAFDA,#007FFF)",
-                                        width: 55,
-                                        height: 55,
-                                        borderRadius: 3,
-                                        display: "flex",
-                                        alignItems: "center",
-                                        justifyContent: "center",
-                                    }}
-                                >
-                                    <Icon icon={service.icon} height="55%" color="#fff" />
-                                </Box>
-
-                                <Typography
-                                    variant="h6"
-                                    sx={{
-                                        fontWeight: 700,
-                                        color: "#222",
-                                        fontSize: { xs: "1.1rem", md: "1.2rem" },
-                                    }}
-                                >
-                                    {service.title}
-                                </Typography>
-                            </Box>
-
-                            {/* DESCRIPTION */}
                             <Box
                                 sx={{
-                                    mt: 2,
-                                    maxHeight: isOpen ? "500px" : "52px", // FIXED: no more clipping
+                                    position: "relative",
                                     overflow: "hidden",
-                                    opacity: isOpen ? 1 : 0.75,
-                                    transition: `
-                                        max-height 1s cubic-bezier(0.25, 0.1, 0.25, 1),
-                                        opacity 0.6s ease
-                                    `,
+                                    borderRadius: "20px",
+                                    p: 3,
+
+                                    // DEFAULT COLORS
+                                    background: "white",
+                                    color: "#3F8CFF",
+
+                                    minHeight: { xs: "230px", md: "250px" },
+                                    transition: "0.4s ease",
                                 }}
                             >
-                                <Typography
+                                {/* BLUE FILL (ANIMATION) */}
+                                <motion.div
+                                    animate={{ width: isOpen ? "100%" : "0%" }}
+                                    transition={{ duration: 0.45, ease: "easeInOut" }}
+                                    style={{
+                                        position: "absolute",
+                                        top: 0,
+                                        left: 0,
+                                        height: "100%",
+                                        backgroundColor: "#3F8CFF",
+                                        zIndex: 0,
+                                    }}
+                                />
+
+                                {/* CONTENT */}
+                                <Box
                                     sx={{
-                                        color: "#555",
-                                        lineHeight: 1.6,
-                                        fontSize: { xs: "0.9rem", md: "1rem" },
-                                        display: "-webkit-box",
-                                        WebkitLineClamp: isOpen ? "unset" : 2,
-                                        WebkitBoxOrient: "vertical",
-                                        overflow: "hidden",
+                                        position: "relative",
+                                        zIndex: 1,
+                                        color: isOpen ? "white" : "#3F8CFF", // TEXT CHANGES WHEN ACTIVE
+                                        transition: "0.3s",
                                     }}
                                 >
-                                    {service.description}
-                                </Typography>
+                                    {/* ICON + TITLE */}
+                                    <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+                                        <Box
+                                            sx={{
+                                                background: "linear-gradient(135deg,#3BAFDA,#007FFF)",
+                                                width: 55,
+                                                height: 55,
+                                                borderRadius: 3,
+                                                display: "flex",
+                                                alignItems: "center",
+                                                justifyContent: "center",
+                                            }}
+                                        >
+                                            <Icon icon={service.icon} height="55%" color="#fff" />
+                                        </Box>
+
+                                        <Typography
+                                            variant="h6"
+                                            sx={{
+                                                fontWeight: 700,
+                                                fontSize: { xs: "1.1rem", md: "1.2rem" },
+                                                color: isOpen ? "white" : "#3F8CFF",
+                                            }}
+                                        >
+                                            {service.title}
+                                        </Typography>
+                                    </Box>
+
+                                    {/* DESCRIPTION */}
+                                    <Box
+                                        sx={{
+                                            mt: 2,
+                                            maxHeight: isOpen ? "300px" : "48px",
+                                            overflow: "hidden",
+                                            opacity: isOpen ? 1 : 0.75,
+                                            transition: `
+                                                max-height 0.8s ease,
+                                                opacity 0.5s ease
+                                            `,
+                                        }}
+                                    >
+                                        <Typography
+                                            sx={{
+                                                color: isOpen ? "white" : "#555",
+                                                lineHeight: 1.6,
+                                                fontSize: { xs: "0.9rem", md: "1rem" },
+                                                display: "-webkit-box",
+                                                WebkitLineClamp: isOpen ? "unset" : 2,
+                                                WebkitBoxOrient: "vertical",
+                                                overflow: "hidden",
+                                            }}
+                                        >
+                                            {service.description}
+                                        </Typography>
+                                    </Box>
+                                </Box>
                             </Box>
-                        </Box>
+                        </motion.div>
                     );
                 })}
             </Box>
