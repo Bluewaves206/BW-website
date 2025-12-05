@@ -20,7 +20,14 @@ DATE: 03/12/2005
 
 ----------------------------------------------------------------------
 
-DATE: 03/12/2005 
+DATE: 04/12/2005 
 
 -Build CRM Page.
 -Rebuild the Homepage and Organize All Sections Component-Wise.
+
+----------------------------------------------------------------------
+
+DATE: 05/12/2005
+
+-Build Whatsapp Page
+-Build IVR Page

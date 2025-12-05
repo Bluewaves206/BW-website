@@ -14,6 +14,8 @@ import SMS from "./pages/sms";
 import WebDev from "./pages/webdev";
 import BulkEmail from "./pages/bulkEmail";
 import Whatsapp from "./pages/whatsapp";
+import IVR from "./pages/IVR";
+
 
 import Loader from "./components/Loader";
 import CRM from "./pages/crm";   
@@ -70,6 +72,7 @@ function App() {
 `}
                 blogImg="src/assets/DemoVid.png" />} />
               <Route path="/whatsapp" element={<Whatsapp />} />
+              <Route path="/IVR" element={<IVR />} />
               <Route path="*" element={<Error />} />
             </Route>
 

@@ -75,7 +75,7 @@ export default function ServicesDropDown({ setServiceDrop }: { setServiceDrop: (
         },
         {
             name: "IVR",
-            link: "/whatsapp",
+            link: "/IVR",
             about: {
                 head: `“IVR”`,
                 body: "Manage clients, track sales, and grow your business — all in one powerful platform.",
